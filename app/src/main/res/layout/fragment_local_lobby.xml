@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/player_one_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player 1 name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"></EditText>
+
+    <EditText
+        android:id="@+id/player_two_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player 2 name"
+        android:layout_marginTop="180dp"
+        android:layout_centerHorizontal="true"></EditText>
+
+    <EditText
+        android:id="@+id/player_three_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player 3 name"
+        android:layout_marginTop="280dp"
+        android:layout_centerHorizontal="true"></EditText>
+
+    <EditText
+        android:id="@+id/player_four_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player 4 name"
+        android:layout_marginTop="380dp"
+        android:layout_centerHorizontal="true"></EditText>
+
+    <Button
+        android:id="@+id/btn_2players"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2 players"
+        android:onClick="openPlayingInterface"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="480dp"></Button>
+
+</RelativeLayout>

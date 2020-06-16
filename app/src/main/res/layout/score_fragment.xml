@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1,2,3,4"
+        android:scrollbars="vertical">
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Player1"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Player2"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Player3"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Player4"></TextView>
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_aces"
+                android:text="Aces"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_twos"
+                android:text="Twos"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_threes"
+                android:text="Threes"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_fours"
+                android:text="Fours"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_fives"
+                android:text="Fives"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_sixes"
+                android:text="Sixes"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="Upper Score"
+                android:gravity="center"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="Bonus"
+                android:gravity="center"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="Upper Total"
+                android:gravity="center"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_toak"
+                android:text="TOAK"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_foak"
+                android:text="FOAK"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_fullHouse"
+                android:text="Full House"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_smallStraight"
+                android:text="Small S"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_largeStraight"
+                android:text="Large S"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_kniffle"
+                android:text="Kniffle"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_chance"
+                android:text="Chance"></Button>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="Lower Score"
+                android:gravity="center"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="Upper total"
+                android:gravity="center"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="Total score"
+                android:gravity="center"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="3"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+            <TextView
+                android:layout_column="4"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="0"></TextView>
+
+        </TableRow>
+
+    </TableLayout>
+</ScrollView>

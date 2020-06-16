@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Kniffelig</string>
+    <string name="excelent">Excelent</string>
+    <string name="verygood">Very Good</string>
+    <string name="good">Good</string>
+    <string name="okay">Okay</string>
+    <string name="poor">Poor</string>
+    <string name="unknown">Unknown</string>
+    <string name="new_game">New Game</string>
+    <string name="join_game">Join Game</string>
+    <string name="join">Join</string>
+    <string name="BT_UUID">dda5a966-7119-11ea-bc55-0242ac130003</string>
+    <string name="pictureName">dice</string>
+    <string name="defaultPackage">com.kimoji.kniffelig</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="sharedPreferencesFile" />
+</resources>
