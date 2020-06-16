@@ -46,96 +46,49 @@ public class ScoreFragment extends Fragment {
         View view = inflater.inflate(R.layout.score_fragment, container, false);
 
         btnAces = view.findViewById(R.id.btn_aces);
-        btnAces.setOnClickListener(this::addAces);
+        btnAces.setOnClickListener(this::addScore);
 
         btnTwos = view.findViewById(R.id.btn_twos);
-        btnTwos.setOnClickListener(this::addTwos);
+        btnTwos.setOnClickListener(this::addScore);
 
         btnThrees = view.findViewById(R.id.btn_threes);
-        btnThrees.setOnClickListener(this::addThrees);
+        btnThrees.setOnClickListener(this::addScore);
 
         btnFours = view.findViewById(R.id.btn_fours);
-        btnFours.setOnClickListener(this::adFours);
+        btnFours.setOnClickListener(this::addScore);
 
         btnFives = view.findViewById(R.id.btn_fives);
-        btnFives.setOnClickListener(this::addFives);
+        btnFives.setOnClickListener(this::addScore);
 
         btnSixes = view.findViewById(R.id.btn_sixes);
-        btnSixes.setOnClickListener(this::addSixes);
+        btnSixes.setOnClickListener(this::addScore);
 
         btnTOAK = view.findViewById(R.id.btn_toak);
-        btnTOAK.setOnClickListener(this::addTOAK);
+        btnTOAK.setOnClickListener(this::addScore);
 
         btnFOAK = view.findViewById(R.id.btn_foak);
-        btnFOAK.setOnClickListener(this::addFOAK);
+        btnFOAK.setOnClickListener(this::addScore);
 
         btnFullhouse = view.findViewById(R.id.btn_fullHouse);
-        btnFullhouse.setOnClickListener(this::addFullhouse);
+        btnFullhouse.setOnClickListener(this::addScore);
 
         btnSmallS = view.findViewById(R.id.btn_smallStraight);
-        btnSmallS.setOnClickListener(this::addSmallStraight);
+        btnSmallS.setOnClickListener(this::addScore);
 
         btnLargeS = view.findViewById(R.id.btn_largeStraight);
-        btnLargeS.setOnClickListener(this::addLargeStraight);
+        btnLargeS.setOnClickListener(this::addScore);
 
         btnKniffle = view.findViewById(R.id.btn_kniffle);
-        btnKniffle.setOnClickListener(this::addKniffle);
+        btnKniffle.setOnClickListener(this::addScore);
 
         btnChance = view.findViewById(R.id.btn_chance);
-        btnChance.setOnClickListener(this::addChance);
+        btnChance.setOnClickListener(this::addScore);
 
         return view;
     }
 
-    private void addAces(View v) {
-        playground.addScore(Score.ACES);
-    }
-
-    private void addTwos(View v) {
-        playground.addScore(Score.ACES);
-    }
-
-    private void addThrees(View v) {
-        playground.addScore(Score.THREES);
-    }
-
-    private void adFours(View v) {
-        playground.addScore(Score.FOURS);
-    }
-
-    private void addFives(View v) {
-        playground.addScore(Score.FIVES);
-    }
-
-    private void addSixes(View v) {
-        playground.addScore(Score.SIXES);
-    }
-
-    private void addTOAK(View v) {
-        playground.addScore(Score.THREEOFAKIND);
-    }
-
-    private void addFOAK(View v) {
-        playground.addScore(Score.FOUROFAKIND);
-    }
-
-    private void addFullhouse(View v) {
-        playground.addScore(Score.FULLHOUSE);
-    }
-
-    private void addSmallStraight(View v) {
-        playground.addScore(Score.SMALLSTRAIGHT);
-    }
-
-    private void addLargeStraight(View v) {
-        playground.addScore(Score.LARGESTRAIGHT);
-    }
-
-    private void addKniffle(View v) {
-        playground.addScore(Score.KNIFFEL);
-    }
-
-    private void addChance(View v) {
-        playground.addScore(Score.CHANCE);
+    private void addScore(View v){
+        Button btn = (Button) v;
+        playground.addScore(Score.getScore(btn.getText().toString()));
     }
 }
