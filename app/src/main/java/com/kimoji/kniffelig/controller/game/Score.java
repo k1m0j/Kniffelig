@@ -6,6 +6,7 @@ public enum Score {
 
     private int index;
     private int value;
+    private String text;
 
     static {
         int index = 0;
@@ -30,11 +31,46 @@ public enum Score {
         KNIFFEL.value = 50;
     }
 
+    static {
+        ACES.text = "Aces";
+        TWOS.text = "Twos";
+        THREES.text = "Threes";
+        FOURS.text = "Fours";
+        FIVES.text = "Fives";
+        SIXES.text = "Sixes";
+        THREEOFAKIND.text = "TOAK";
+        FOUROFAKIND.text = "FOAK";
+        FULLHOUSE.text = "Full House";
+        SMALLSTRAIGHT.text = "Small S";
+        LARGESTRAIGHT.text = "Large S";
+        KNIFFEL.text = "Kniffel";
+        CHANCE.text = "Chance";
+    }
+
     public int getIndex() {
         return index;
     }
 
     public int getValue() {
         return value;
+    }
+
+    public static Score getScore(String name){
+        switch (name){
+            case  "Aces": return ACES;
+            case  "Twos": return TWOS;
+            case "Threes": return THREES;
+            case  "Fours": return FOURS;
+            case  "Fives": return FIVES;
+            case  "Sixes": return SIXES;
+            case  "TOAK": return THREEOFAKIND;
+            case  "FOAK": return FOUROFAKIND;
+            case  "Full House": return FULLHOUSE;
+            case  "Small S": return SMALLSTRAIGHT;
+            case  "Large S": return LARGESTRAIGHT;
+            case  "Kniffel": return KNIFFEL;
+            case  "Chance": return CHANCE;
+            default: return null;
+        }
     }
 }
