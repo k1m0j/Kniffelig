@@ -1,17 +1,21 @@
 package com.kimoji.kniffelig.model;
 
-import com.kimoji.kniffelig.controller.game.Score;
+import com.kimoji.kniffelig.controller.game.OldScore;
+import com.kimoji.kniffelig.model.game.Player;
+import com.kimoji.kniffelig.model.game.PlayerImp;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class PlayerTest {
 
     private Player testPlayer;
     private int[] scores;
-    Score score = Score.ACES; //TODO Mocken?
+    OldScore oldScore = OldScore.ACES; //TODO Mocken?
 
 
     @BeforeEach

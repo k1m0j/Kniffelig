@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.kimoji.kniffelig.R;
-import com.kimoji.kniffelig.model.DataStorage;
+import com.kimoji.kniffelig.model.persistenz.DataStorage;
 import com.kimoji.kniffelig.view.game.GameActivity;
 
 public class LocalLobbyFragment extends Fragment {

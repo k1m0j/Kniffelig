@@ -1,8 +1,8 @@
 package com.kimoji.kniffelig.controller.game;
 
 
-import com.kimoji.kniffelig.model.DiceImp;
-import com.kimoji.kniffelig.model.Dice;
+import com.kimoji.kniffelig.model.game.DiceImp;
+import com.kimoji.kniffelig.model.game.Dice;
 
 import java.util.Random;
 

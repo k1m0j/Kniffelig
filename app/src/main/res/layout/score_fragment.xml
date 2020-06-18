@@ -696,7 +696,7 @@
         <TableRow>
 
             <TextView
-                android:text="Total score"
+                android:text="Total oldScore"
                 android:gravity="center"
                 android:textStyle="bold"></TextView>
 

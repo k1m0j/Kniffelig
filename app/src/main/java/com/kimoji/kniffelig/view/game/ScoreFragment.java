@@ -11,8 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.kimoji.kniffelig.R;
+import com.kimoji.kniffelig.controller.game.OldScore;
 import com.kimoji.kniffelig.controller.game.Playground;
-import com.kimoji.kniffelig.controller.game.Score;
 
 public class ScoreFragment extends Fragment {
 
@@ -87,8 +87,8 @@ public class ScoreFragment extends Fragment {
         return view;
     }
 
-    private void addScore(View v){
+    private void addScore(View v) {
         Button btn = (Button) v;
-        playground.addScore(Score.getScore(btn.getText().toString()));
+        playground.addScore(OldScore.getScore(btn.getText().toString()));
     }
 }
