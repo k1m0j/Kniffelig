@@ -65,10 +65,10 @@ public class PlaygroundImp implements Playground {
     }
 
     @Override
-    public void addScore(OldScore oldScore) {
+    public void addScore(ScoreType scoreType) {
         if (gameStatus.getCurrentRound() < ROUND_NUMBER) {
-            int actualScore = ScoreCalculator.calcScore(oldScore, SHAKER.getValues());
-            allPlayers[gameStatus.getActivePlayer()].setScore(oldScore, actualScore);
+            int actualScore = ScoreCalculator.calcScore(scoreType, SHAKER.getValues());
+            allPlayers[gameStatus.getActivePlayer()].setScore(scoreType, actualScore);
             gameStatus.setLeftTries(TRIES);
             gameStatus.setCurrentRound(getCurrentRound() + 1);
             SHAKER.setAllFree();

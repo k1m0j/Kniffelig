@@ -1,6 +1,6 @@
 package com.kimoji.kniffelig.model;
 
-import com.kimoji.kniffelig.controller.game.OldScore;
+import com.kimoji.kniffelig.controller.game.ScoreType;
 import com.kimoji.kniffelig.model.game.Player;
 import com.kimoji.kniffelig.model.game.PlayerImp;
 
@@ -15,7 +15,7 @@ class PlayerTest {
 
     private Player testPlayer;
     private int[] scores;
-    OldScore oldScore = OldScore.ACES; //TODO Mocken?
+    ScoreType scoreType = ScoreType.ACES; //TODO Mocken?
 
 
     @BeforeEach

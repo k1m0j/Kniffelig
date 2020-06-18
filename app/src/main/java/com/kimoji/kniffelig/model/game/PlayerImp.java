@@ -1,6 +1,6 @@
 package com.kimoji.kniffelig.model.game;
 
-import com.kimoji.kniffelig.controller.game.OldScore;
+import com.kimoji.kniffelig.controller.game.ScoreType;
 
 public class PlayerImp implements Player {
 
@@ -39,12 +39,12 @@ public class PlayerImp implements Player {
     }
 
     @Override
-    public int getScore(OldScore oldScore) {
-        return scores[oldScore.getIndex()];
+    public int getScore(ScoreType scoreType) {
+        return scores[scoreType.getIndex()];
     }
 
     @Override
-    public void setScore(OldScore oldScore, int actualScore) {
-        scores[oldScore.getIndex()] = actualScore;
+    public void setScore(ScoreType scoreType, int actualScore) {
+        scores[scoreType.getIndex()] = actualScore;
     }
 }

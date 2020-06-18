@@ -31,9 +31,9 @@ public interface Playground {
     /**
      * Adding a points of a specified score to the current active player
      *
-     * @param oldScore specified score
+     * @param scoreType specified score
      */
-    void addScore(OldScore oldScore);
+    void addScore(ScoreType scoreType);
 
     /**
      * Returning the left tries for the active player this round

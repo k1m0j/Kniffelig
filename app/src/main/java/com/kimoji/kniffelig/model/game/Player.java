@@ -1,6 +1,6 @@
 package com.kimoji.kniffelig.model.game;
 
-import com.kimoji.kniffelig.controller.game.OldScore;
+import com.kimoji.kniffelig.controller.game.ScoreType;
 
 /**
  * Interface for the player model
@@ -37,16 +37,16 @@ public interface Player {
     /**
      * Returning the points for a specific score
      *
-     * @param oldScore identifying score
+     * @param scoreType identifying score
      * @return points for the specified score
      */
-    int getScore(OldScore oldScore);
+    int getScore(ScoreType scoreType);
 
     /**
      * Setting a specific score score to a given value
      *
-     * @param oldScore    specific score
+     * @param scoreType   specific score
      * @param actualScore new score value
      */
-    void setScore(OldScore oldScore, int actualScore);
+    void setScore(ScoreType scoreType, int actualScore);
 }

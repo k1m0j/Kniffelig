@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class OldScoreCalculatorTest {
+public class ScoreTypeCalculatorTest {
 
     @Test
     public void testTest() {
@@ -14,14 +14,14 @@ public class OldScoreCalculatorTest {
     @Test
     public void calcScoreException() {
         final int[] dices = {1, 2, 3};
-        assertThrows(IllegalArgumentException.class, () -> ScoreCalculator.calcScore(OldScore.ACES, dices));
+        assertThrows(IllegalArgumentException.class, () -> ScoreCalculator.calcScore(ScoreType.ACES, dices));
     }
 
     @Test
     public void calcScoreAceTest() {
         int[] dices = {1, 2, 3, 4, 5};
         try {
-            assertEquals(1, ScoreCalculator.calcScore(OldScore.ACES, dices));
+            assertEquals(1, ScoreCalculator.calcScore(ScoreType.ACES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -31,7 +31,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreZeroAcesTest() {
         int[] dices = {2, 2, 3, 4, 5};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.ACES, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.ACES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -41,7 +41,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreMultAcesTest() {
         int[] dices = {1, 1, 1, 4, 5};
         try {
-            assertEquals(3, ScoreCalculator.calcScore(OldScore.ACES, dices));
+            assertEquals(3, ScoreCalculator.calcScore(ScoreType.ACES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -51,7 +51,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreOnlyAcesTest() {
         int[] dices = {1, 1, 1, 1, 1};
         try {
-            assertEquals(5, ScoreCalculator.calcScore(OldScore.ACES, dices));
+            assertEquals(5, ScoreCalculator.calcScore(ScoreType.ACES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -61,7 +61,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreTwoTest() {
         int[] dices = {2, 1, 3, 4, 5};
         try {
-            assertEquals(2, ScoreCalculator.calcScore(OldScore.TWOS, dices));
+            assertEquals(2, ScoreCalculator.calcScore(ScoreType.TWOS, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -71,7 +71,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreZeroTwosTest() {
         int[] dices = {1, 1, 3, 4, 5};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.TWOS, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.TWOS, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -81,7 +81,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreMultTwosTest() {
         int[] dices = {2, 2, 2, 4, 5};
         try {
-            assertEquals(6, ScoreCalculator.calcScore(OldScore.TWOS, dices));
+            assertEquals(6, ScoreCalculator.calcScore(ScoreType.TWOS, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -91,7 +91,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreOnlyTwosTest() {
         int[] dices = {2, 2, 2, 2, 2};
         try {
-            assertEquals(10, ScoreCalculator.calcScore(OldScore.TWOS, dices));
+            assertEquals(10, ScoreCalculator.calcScore(ScoreType.TWOS, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -101,7 +101,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreThreesTest() {
         int[] dices = {1, 2, 3, 4, 5};
         try {
-            assertEquals(3, ScoreCalculator.calcScore(OldScore.THREES, dices));
+            assertEquals(3, ScoreCalculator.calcScore(ScoreType.THREES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -111,7 +111,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreZeroThreesTest() {
         int[] dices = {2, 2, 5, 4, 5};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.THREES, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.THREES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -121,7 +121,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreMultThreesTest() {
         int[] dices = {3, 3, 3, 4, 5};
         try {
-            assertEquals(9, ScoreCalculator.calcScore(OldScore.THREES, dices));
+            assertEquals(9, ScoreCalculator.calcScore(ScoreType.THREES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -131,7 +131,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreOnlyThreesTest() {
         int[] dices = {3, 3, 3, 3, 3};
         try {
-            assertEquals(15, ScoreCalculator.calcScore(OldScore.THREES, dices));
+            assertEquals(15, ScoreCalculator.calcScore(ScoreType.THREES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -141,7 +141,7 @@ public class OldScoreCalculatorTest {
     public void calcScorFoursTest() {
         int[] dices = {1, 2, 3, 4, 5};
         try {
-            assertEquals(4, ScoreCalculator.calcScore(OldScore.FOURS, dices));
+            assertEquals(4, ScoreCalculator.calcScore(ScoreType.FOURS, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -151,7 +151,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreZeroFoursTest() {
         int[] dices = {2, 2, 5, 1, 5};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.FOURS, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.FOURS, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -161,7 +161,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreMultFoursTest() {
         int[] dices = {4, 4, 3, 4, 5};
         try {
-            assertEquals(12, ScoreCalculator.calcScore(OldScore.FOURS, dices));
+            assertEquals(12, ScoreCalculator.calcScore(ScoreType.FOURS, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -171,7 +171,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreOnlyFoursTest() {
         int[] dices = {4, 4, 4, 4, 4};
         try {
-            assertEquals(20, ScoreCalculator.calcScore(OldScore.FOURS, dices));
+            assertEquals(20, ScoreCalculator.calcScore(ScoreType.FOURS, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -181,7 +181,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreFivesTest() {
         int[] dices = {1, 2, 3, 4, 5};
         try {
-            assertEquals(5, ScoreCalculator.calcScore(OldScore.FIVES, dices));
+            assertEquals(5, ScoreCalculator.calcScore(ScoreType.FIVES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -191,7 +191,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreZeroFivesTest() {
         int[] dices = {2, 2, 3, 4, 1};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.FIVES, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.FIVES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -201,7 +201,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreMultFivesTest() {
         int[] dices = {5, 5, 3, 4, 5};
         try {
-            assertEquals(15, ScoreCalculator.calcScore(OldScore.FIVES, dices));
+            assertEquals(15, ScoreCalculator.calcScore(ScoreType.FIVES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -211,7 +211,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreOnlyFivesTest() {
         int[] dices = {5, 5, 5, 5, 5};
         try {
-            assertEquals(25, ScoreCalculator.calcScore(OldScore.FIVES, dices));
+            assertEquals(25, ScoreCalculator.calcScore(ScoreType.FIVES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -221,7 +221,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreSixesTest() {
         int[] dices = {1, 2, 3, 4, 6};
         try {
-            assertEquals(6, ScoreCalculator.calcScore(OldScore.SIXES, dices));
+            assertEquals(6, ScoreCalculator.calcScore(ScoreType.SIXES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -231,7 +231,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreZeroSixesTest() {
         int[] dices = {2, 2, 5, 4, 5};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.SIXES, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.SIXES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -241,7 +241,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreMultSixesTest() {
         int[] dices = {6, 6, 6, 4, 5};
         try {
-            assertEquals(18, ScoreCalculator.calcScore(OldScore.SIXES, dices));
+            assertEquals(18, ScoreCalculator.calcScore(ScoreType.SIXES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -251,7 +251,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreOnlySixesTest() {
         int[] dices = {6, 6, 6, 6, 6};
         try {
-            assertEquals(30, ScoreCalculator.calcScore(OldScore.SIXES, dices));
+            assertEquals(30, ScoreCalculator.calcScore(ScoreType.SIXES, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -261,7 +261,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreTOAKgood1() {
         int[] dices = {1, 2, 6, 6, 6};
         try {
-            assertEquals(21, ScoreCalculator.calcScore(OldScore.THREEOFAKIND, dices));
+            assertEquals(21, ScoreCalculator.calcScore(ScoreType.THREE_OF_A_KIND, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -271,7 +271,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreTOAKgood2() {
         int[] dices = {1, 1, 1, 6, 6};
         try {
-            assertEquals(15, ScoreCalculator.calcScore(OldScore.THREEOFAKIND, dices));
+            assertEquals(15, ScoreCalculator.calcScore(ScoreType.THREE_OF_A_KIND, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -281,7 +281,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreTOAKMult() {
         int[] dices = {6, 2, 6, 6, 6};
         try {
-            assertEquals(26, ScoreCalculator.calcScore(OldScore.THREEOFAKIND, dices));
+            assertEquals(26, ScoreCalculator.calcScore(ScoreType.THREE_OF_A_KIND, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -291,7 +291,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreTOAKZero() {
         int[] dices = {1, 2, 2, 6, 6};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.THREEOFAKIND, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.THREE_OF_A_KIND, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -301,7 +301,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreFOAKgood1() {
         int[] dices = {1, 6, 6, 6, 6};
         try {
-            assertEquals(25, ScoreCalculator.calcScore(OldScore.FOUROFAKIND, dices));
+            assertEquals(25, ScoreCalculator.calcScore(ScoreType.FOUR_OF_A_KIND, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -311,7 +311,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreFOAKgood2() {
         int[] dices = {1, 1, 1, 1, 6};
         try {
-            assertEquals(10, ScoreCalculator.calcScore(OldScore.FOUROFAKIND, dices));
+            assertEquals(10, ScoreCalculator.calcScore(ScoreType.FOUR_OF_A_KIND, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -321,7 +321,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreFOAKMult() {
         int[] dices = {6, 6, 6, 6, 6};
         try {
-            assertEquals(30, ScoreCalculator.calcScore(OldScore.FOUROFAKIND, dices));
+            assertEquals(30, ScoreCalculator.calcScore(ScoreType.FOUR_OF_A_KIND, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -331,7 +331,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreFOAKZero1() {
         int[] dices = {1, 2, 2, 6, 6};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.FOUROFAKIND, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.FOUR_OF_A_KIND, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -341,7 +341,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreFOAKZero2() {
         int[] dices = {1, 2, 2, 2, 6};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.FOUROFAKIND, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.FOUR_OF_A_KIND, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -351,7 +351,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreSmallStraightZero1() {
         int[] dices = {1, 2, 2, 2, 6};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.SMALLSTRAIGHT, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.SMALL_STRAIGHT, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -361,7 +361,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreSmallStraightZero2() {
         int[] dices = {1, 2, 3, 2, 6};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.SMALLSTRAIGHT, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.SMALL_STRAIGHT, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -371,7 +371,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreSmallStraightGood1() {
         int[] dices = {1, 2, 3, 2, 4};
         try {
-            assertEquals(30, ScoreCalculator.calcScore(OldScore.SMALLSTRAIGHT, dices));
+            assertEquals(30, ScoreCalculator.calcScore(ScoreType.SMALL_STRAIGHT, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -381,7 +381,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreSmallStraightGood2() {
         int[] dices = {5, 2, 3, 2, 4};
         try {
-            assertEquals(30, ScoreCalculator.calcScore(OldScore.SMALLSTRAIGHT, dices));
+            assertEquals(30, ScoreCalculator.calcScore(ScoreType.SMALL_STRAIGHT, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -391,7 +391,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreSmallStraightGood3() {
         int[] dices = {1, 5, 3, 2, 4};
         try {
-            assertEquals(30, ScoreCalculator.calcScore(OldScore.SMALLSTRAIGHT, dices));
+            assertEquals(30, ScoreCalculator.calcScore(ScoreType.SMALL_STRAIGHT, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -401,7 +401,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreSmallStraightGood4() {
         int[] dices = {6, 5, 3, 2, 4};
         try {
-            assertEquals(30, ScoreCalculator.calcScore(OldScore.SMALLSTRAIGHT, dices));
+            assertEquals(30, ScoreCalculator.calcScore(ScoreType.SMALL_STRAIGHT, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -411,7 +411,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreSmallStraightGood5() {
         int[] dices = {6, 5, 3, 3, 4};
         try {
-            assertEquals(30, ScoreCalculator.calcScore(OldScore.SMALLSTRAIGHT, dices));
+            assertEquals(30, ScoreCalculator.calcScore(ScoreType.SMALL_STRAIGHT, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -421,7 +421,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreLargeStraightZero1() {
         int[] dices = {1, 2, 2, 2, 4};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.LARGESTRAIGHT, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.LARGE_STRAIGHT, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -431,7 +431,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreLargeStraightZero2() {
         int[] dices = {1, 2, 3, 2, 4};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.LARGESTRAIGHT, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.LARGE_STRAIGHT, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -441,7 +441,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreLargeStraightZero3() {
         int[] dices = {5, 2, 3, 2, 4};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.LARGESTRAIGHT, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.LARGE_STRAIGHT, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -451,7 +451,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreLargeStraightGood1() {
         int[] dices = {5, 2, 3, 6, 4};
         try {
-            assertEquals(40, ScoreCalculator.calcScore(OldScore.LARGESTRAIGHT, dices));
+            assertEquals(40, ScoreCalculator.calcScore(ScoreType.LARGE_STRAIGHT, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -461,7 +461,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreLargeStraightGood2() {
         int[] dices = {5, 2, 3, 1, 4};
         try {
-            assertEquals(40, ScoreCalculator.calcScore(OldScore.LARGESTRAIGHT, dices));
+            assertEquals(40, ScoreCalculator.calcScore(ScoreType.LARGE_STRAIGHT, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -471,7 +471,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreFullHouseZero1() {
         int[] dices = {5, 2, 3, 1, 4};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.FULLHOUSE, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.FULLHOUSE, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -481,7 +481,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreFullHouseZero2() {
         int[] dices = {2, 2, 2, 2, 4};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.FULLHOUSE, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.FULLHOUSE, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -491,7 +491,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreFullHouseZero3() {
         int[] dices = {2, 2, 3, 3, 4};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.FULLHOUSE, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.FULLHOUSE, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -501,7 +501,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreFullHouseGood1() {
         int[] dices = {2, 2, 2, 4, 4};
         try {
-            assertEquals(25, ScoreCalculator.calcScore(OldScore.FULLHOUSE, dices));
+            assertEquals(25, ScoreCalculator.calcScore(ScoreType.FULLHOUSE, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -511,7 +511,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreFullHouseGood2() {
         int[] dices = {2, 2, 2, 6, 6};
         try {
-            assertEquals(25, ScoreCalculator.calcScore(OldScore.FULLHOUSE, dices));
+            assertEquals(25, ScoreCalculator.calcScore(ScoreType.FULLHOUSE, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -521,7 +521,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreKniffleZero1() {
         int[] dices = {2, 2, 2, 6, 6};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.KNIFFEL, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.KNIFFEL, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -531,7 +531,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreKniffleZero2() {
         int[] dices = {2, 2, 2, 2, 1};
         try {
-            assertEquals(0, ScoreCalculator.calcScore(OldScore.KNIFFEL, dices));
+            assertEquals(0, ScoreCalculator.calcScore(ScoreType.KNIFFEL, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -541,7 +541,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreKniffleGood1() {
         int[] dices = {2, 2, 2, 2, 2};
         try {
-            assertEquals(50, ScoreCalculator.calcScore(OldScore.KNIFFEL, dices));
+            assertEquals(50, ScoreCalculator.calcScore(ScoreType.KNIFFEL, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -551,7 +551,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreKniffleGood2() {
         int[] dices = {1, 1, 1, 1, 1};
         try {
-            assertEquals(50, ScoreCalculator.calcScore(OldScore.KNIFFEL, dices));
+            assertEquals(50, ScoreCalculator.calcScore(ScoreType.KNIFFEL, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -561,7 +561,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreChance1() {
         int[] dices = {1, 1, 1, 1, 1};
         try {
-            assertEquals(5, ScoreCalculator.calcScore(OldScore.CHANCE, dices));
+            assertEquals(5, ScoreCalculator.calcScore(ScoreType.CHANCE, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -571,7 +571,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreChance2() {
         int[] dices = {2, 2, 1, 1, 1};
         try {
-            assertEquals(7, ScoreCalculator.calcScore(OldScore.CHANCE, dices));
+            assertEquals(7, ScoreCalculator.calcScore(ScoreType.CHANCE, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
@@ -582,7 +582,7 @@ public class OldScoreCalculatorTest {
     public void calcScoreChance3() {
         int[] dices = {1, 4, 1, 5, 3};
         try {
-            assertEquals(14, ScoreCalculator.calcScore(OldScore.CHANCE, dices));
+            assertEquals(14, ScoreCalculator.calcScore(ScoreType.CHANCE, dices));
         } catch (IllegalArgumentException e) {
             fail();
         }
