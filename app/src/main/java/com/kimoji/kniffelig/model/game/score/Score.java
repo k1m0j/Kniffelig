@@ -1,7 +1,7 @@
 package com.kimoji.kniffelig.model.game.score;
 
 public abstract class Score {
-    private int value;
+    private int value = 0;
 
     public abstract int calculateScore(int[] diceValues);
 
