@@ -116,37 +116,37 @@ class PlaygroundTest {
 
     @Test
     void addScoreActivePlayer1() {
-        playground.addScore(Score.ACES);
+        playground.addScore(ScoreType.ACES);
         assertEquals(1, playground.getActivePlayer());
     }
 
     @Test
     void addScoreCurrentRound2() {
-        playground.addScore(Score.ACES);
-        playground.addScore(Score.TWOS);
+        playground.addScore(ScoreType.ACES);
+        playground.addScore(ScoreType.TWOS);
         assertEquals(2, playground.getCurrentRound());
     }
 
     @Test
     void addScoreActivePlayer2() {
-        playground.addScore(Score.ACES);
-        playground.addScore(Score.THREES);
+        playground.addScore(ScoreType.ACES);
+        playground.addScore(ScoreType.THREES);
         assertEquals(2, playground.getActivePlayer());
     }
 
     @Test
     void addScoreCurrentRound3() {
-        playground.addScore(Score.ACES);
-        playground.addScore(Score.TWOS);
-        playground.addScore(Score.FIVES);
+        playground.addScore(ScoreType.ACES);
+        playground.addScore(ScoreType.TWOS);
+        playground.addScore(ScoreType.FIVES);
         assertEquals(3, playground.getCurrentRound());
     }
 
     @Test
     void addScoreActivePlayer3() {
-        playground.addScore(Score.ACES);
-        playground.addScore(Score.THREES);
-        playground.addScore(Score.KNIFFEL);
+        playground.addScore(ScoreType.ACES);
+        playground.addScore(ScoreType.THREES);
+        playground.addScore(ScoreType.KNIFFEL);
         assertEquals(0, playground.getActivePlayer());
     }
 
@@ -157,7 +157,7 @@ class PlaygroundTest {
         } catch (InvalidUserInteractionException e) {
             fail();
         }
-        playground.addScore(Score.FULLHOUSE);
+        playground.addScore(ScoreType.FULLHOUSE);
         assertEquals(3, playground.getLeftTries());
     }
 
@@ -169,44 +169,44 @@ class PlaygroundTest {
         } catch (InvalidUserInteractionException e) {
             fail();
         }
-        playground.addScore(Score.FULLHOUSE);
+        playground.addScore(ScoreType.FULLHOUSE);
         assertEquals(3, playground.getLeftTries());
     }
 
     @Test
     void addScoreMaxReachable() {
-        playground.addScore(Score.ACES);
-        playground.addScore(Score.TWOS);
-        playground.addScore(Score.THREES);
-        playground.addScore(Score.FOURS);
-        playground.addScore(Score.FIVES);
-        playground.addScore(Score.SIXES);
-        playground.addScore(Score.THREEOFAKIND);
-        playground.addScore(Score.FOUROFAKIND);
-        playground.addScore(Score.FULLHOUSE);
-        playground.addScore(Score.SMALLSTRAIGHT);
-        playground.addScore(Score.LARGESTRAIGHT);
-        playground.addScore(Score.KNIFFEL);
-        playground.addScore(Score.CHANCE);
+        playground.addScore(ScoreType.ACES);
+        playground.addScore(ScoreType.TWOS);
+        playground.addScore(ScoreType.THREES);
+        playground.addScore(ScoreType.FOURS);
+        playground.addScore(ScoreType.FIVES);
+        playground.addScore(ScoreType.SIXES);
+        playground.addScore(ScoreType.THREE_OF_A_KIND);
+        playground.addScore(ScoreType.FOUR_OF_A_KIND);
+        playground.addScore(ScoreType.FULLHOUSE);
+        playground.addScore(ScoreType.SMALL_STRAIGHT);
+        playground.addScore(ScoreType.LARGE_STRAIGHT);
+        playground.addScore(ScoreType.KNIFFEL);
+        playground.addScore(ScoreType.CHANCE);
         assertEquals(13, playground.getCurrentRound());
     }
 
     @Test
     void addScoreMaxWorking() {
-        playground.addScore(Score.ACES);
-        playground.addScore(Score.TWOS);
-        playground.addScore(Score.THREES);
-        playground.addScore(Score.FOURS);
-        playground.addScore(Score.FIVES);
-        playground.addScore(Score.SIXES);
-        playground.addScore(Score.THREEOFAKIND);
-        playground.addScore(Score.FOUROFAKIND);
-        playground.addScore(Score.FULLHOUSE);
-        playground.addScore(Score.SMALLSTRAIGHT);
-        playground.addScore(Score.LARGESTRAIGHT);
-        playground.addScore(Score.KNIFFEL);
-        playground.addScore(Score.KNIFFEL);
-        playground.addScore(Score.CHANCE);
+        playground.addScore(ScoreType.ACES);
+        playground.addScore(ScoreType.TWOS);
+        playground.addScore(ScoreType.THREES);
+        playground.addScore(ScoreType.FOURS);
+        playground.addScore(ScoreType.FIVES);
+        playground.addScore(ScoreType.SIXES);
+        playground.addScore(ScoreType.THREE_OF_A_KIND);
+        playground.addScore(ScoreType.FOUR_OF_A_KIND);
+        playground.addScore(ScoreType.FULLHOUSE);
+        playground.addScore(ScoreType.SMALL_STRAIGHT);
+        playground.addScore(ScoreType.LARGE_STRAIGHT);
+        playground.addScore(ScoreType.KNIFFEL);
+        playground.addScore(ScoreType.KNIFFEL);
+        playground.addScore(ScoreType.CHANCE);
         assertEquals(13, playground.getCurrentRound());
     }
 

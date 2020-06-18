@@ -1,4 +1,4 @@
-package com.kimoji.kniffelig.model;
+package com.kimoji.kniffelig.model.game;
 
 /**
  * Interface for the game status model

@@ -1,9 +1,8 @@
-package com.kimoji.kniffelig.model;
+package com.kimoji.kniffelig.model.persistenz;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
-
 
 
 public class DataStorage {
@@ -19,9 +18,6 @@ public class DataStorage {
         this.data = context.getSharedPreferences(dataFilename, Context.MODE_PRIVATE);
         Log.i(TAG, "DataStorage: constructor aufgerufen");
     }
-
-
-
 
 
     public void newSharedPreference(String key, String value) {

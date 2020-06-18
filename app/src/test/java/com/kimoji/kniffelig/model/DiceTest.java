@@ -1,5 +1,8 @@
 package com.kimoji.kniffelig.model;
 
+import com.kimoji.kniffelig.model.game.Dice;
+import com.kimoji.kniffelig.model.game.DiceImp;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

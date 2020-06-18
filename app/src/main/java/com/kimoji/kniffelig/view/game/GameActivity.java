@@ -1,9 +1,7 @@
 package com.kimoji.kniffelig.view.game;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import android.os.PersistableBundle;
 import android.util.Log;
 
 
@@ -16,10 +14,9 @@ import com.kimoji.kniffelig.controller.game.PlaygroundImp;
 import com.kimoji.kniffelig.controller.game.Playground;
 
 
-import com.kimoji.kniffelig.model.DataStorage;
-import com.kimoji.kniffelig.model.Player;
+import com.kimoji.kniffelig.model.persistenz.DataStorage;
 
-import com.kimoji.kniffelig.model.PlayerImp;
+import com.kimoji.kniffelig.model.game.PlayerImp;
 
 import static com.kimoji.kniffelig.view.lobby.LocalLobbyFragment.TEST;
 
@@ -56,7 +53,7 @@ GameActivity extends AppCompatActivity {
         PlayerImp testPlayer4 = new PlayerImp("Zapzarap", scores4);
 
         DataStorage storage = new DataStorage(this, getResources().getString(R.string.sharedPreferencesFile));
-       String name = storage.getSharedPreferences(TEST);
+        String name = storage.getSharedPreferences(TEST);
         Log.i(TAG, "onCreate: " + name);
 
         String[] playerNames = {testPlayer1.getName(), testPlayer2.getName(), testPlayer3.getName(), testPlayer4.getName()};

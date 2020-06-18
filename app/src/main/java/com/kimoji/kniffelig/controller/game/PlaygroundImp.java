@@ -1,10 +1,10 @@
 package com.kimoji.kniffelig.controller.game;
 
 import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
-import com.kimoji.kniffelig.model.GameStatusImp;
-import com.kimoji.kniffelig.model.GameStatus;
-import com.kimoji.kniffelig.model.PlayerImp;
-import com.kimoji.kniffelig.model.Player;
+import com.kimoji.kniffelig.model.game.GameStatusImp;
+import com.kimoji.kniffelig.model.game.GameStatus;
+import com.kimoji.kniffelig.model.game.PlayerImp;
+import com.kimoji.kniffelig.model.game.Player;
 
 public class PlaygroundImp implements Playground {
 
@@ -65,10 +65,10 @@ public class PlaygroundImp implements Playground {
     }
 
     @Override
-    public void addScore(Score score) {
+    public void addScore(ScoreType scoreType) {
         if (gameStatus.getCurrentRound() < ROUND_NUMBER) {
-            int actualScore = ScoreCalculator.calcScore(score, SHAKER.getValues());
-            allPlayers[gameStatus.getActivePlayer()].setScore(score, actualScore);
+            int actualScore = ScoreCalculator.calcScore(scoreType, SHAKER.getValues());
+            allPlayers[gameStatus.getActivePlayer()].setScore(scoreType, actualScore);
             gameStatus.setLeftTries(TRIES);
             gameStatus.setCurrentRound(getCurrentRound() + 1);
             SHAKER.setAllFree();
