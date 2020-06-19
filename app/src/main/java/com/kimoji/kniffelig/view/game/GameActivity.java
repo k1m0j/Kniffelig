@@ -43,14 +43,11 @@ GameActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         //TODO Player Name
-        int[] scores1 = new int[]{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-        int[] scores2 = new int[]{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-        int[] scores3 = new int[]{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-        int[] scores4 = new int[]{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-        PlayerImp testPlayer1 = new PlayerImp("Peter Lustig", scores1);
-        PlayerImp testPlayer2 = new PlayerImp("Daniel Düsentrieb", scores2);
-        PlayerImp testPlayer3 = new PlayerImp("Daisy Duck", scores3);
-        PlayerImp testPlayer4 = new PlayerImp("Zapzarap", scores4);
+
+        PlayerImp testPlayer1 = new PlayerImp("Peter Lustig");
+        PlayerImp testPlayer2 = new PlayerImp("Daniel Düsentrieb");
+        PlayerImp testPlayer3 = new PlayerImp("Daisy Duck");
+        PlayerImp testPlayer4 = new PlayerImp("Zapzarap");
 
         DataStorage storage = new DataStorage(this, getResources().getString(R.string.sharedPreferencesFile));
         String name = storage.getSharedPreferences(TEST);
