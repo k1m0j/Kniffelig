@@ -3,7 +3,7 @@ package com.kimoji.kniffelig.model.game;
 /**
  * Interface for the game status model
  */
-public interface GameStatus {
+public interface GameStatus{
 
     /**
      * Return the current round number

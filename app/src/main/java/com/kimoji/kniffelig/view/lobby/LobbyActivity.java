@@ -1,9 +1,9 @@
 package com.kimoji.kniffelig.view.lobby;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-
-import android.os.Bundle;
 
 import com.kimoji.kniffelig.R;
 
@@ -25,6 +25,7 @@ public class LobbyActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         setupViewPager();
     }
+
 
     private void setupViewPager() {
         lobbyFragmentAdapter.addFragment(new MainLobbyFragment(), "Main Fragment");

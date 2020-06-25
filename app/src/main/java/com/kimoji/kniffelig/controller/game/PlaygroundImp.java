@@ -1,10 +1,10 @@
 package com.kimoji.kniffelig.controller.game;
 
 import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
-import com.kimoji.kniffelig.model.game.GameStatusImp;
 import com.kimoji.kniffelig.model.game.GameStatus;
-import com.kimoji.kniffelig.model.game.PlayerImp;
+import com.kimoji.kniffelig.model.game.GameStatusImp;
 import com.kimoji.kniffelig.model.game.Player;
+import com.kimoji.kniffelig.model.game.PlayerImp;
 
 public class PlaygroundImp implements Playground {
 
@@ -15,6 +15,7 @@ public class PlaygroundImp implements Playground {
     private Player[] allPlayers;
 
     private GameStatus gameStatus;
+
 
 
     public PlaygroundImp(String[] playerNames) {

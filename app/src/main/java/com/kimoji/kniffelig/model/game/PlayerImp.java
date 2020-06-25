@@ -1,15 +1,41 @@
 package com.kimoji.kniffelig.model.game;
 
+
 import com.kimoji.kniffelig.controller.game.ScoreType;
+import com.kimoji.kniffelig.model.game.score.Aces;
+import com.kimoji.kniffelig.model.game.score.Chance;
+import com.kimoji.kniffelig.model.game.score.Fives;
+import com.kimoji.kniffelig.model.game.score.FourOfAKind;
+import com.kimoji.kniffelig.model.game.score.Fours;
+import com.kimoji.kniffelig.model.game.score.Fullhouse;
+import com.kimoji.kniffelig.model.game.score.Kniffel;
+import com.kimoji.kniffelig.model.game.score.LargeStraight;
+import com.kimoji.kniffelig.model.game.score.Score;
+import com.kimoji.kniffelig.model.game.score.Sixes;
+import com.kimoji.kniffelig.model.game.score.SmallStraight;
+import com.kimoji.kniffelig.model.game.score.ThreeOfAKind;
+import com.kimoji.kniffelig.model.game.score.Threes;
+import com.kimoji.kniffelig.model.game.score.Twos;
 
-import com.kimoji.kniffelig.model.game.score.*;
-
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.kimoji.kniffelig.controller.game.ScoreType.*;
+import static com.kimoji.kniffelig.controller.game.ScoreType.ACES;
+import static com.kimoji.kniffelig.controller.game.ScoreType.CHANCE;
+import static com.kimoji.kniffelig.controller.game.ScoreType.FIVES;
+import static com.kimoji.kniffelig.controller.game.ScoreType.FOURS;
+import static com.kimoji.kniffelig.controller.game.ScoreType.FOUR_OF_A_KIND;
+import static com.kimoji.kniffelig.controller.game.ScoreType.FULLHOUSE;
+import static com.kimoji.kniffelig.controller.game.ScoreType.KNIFFEL;
+import static com.kimoji.kniffelig.controller.game.ScoreType.LARGE_STRAIGHT;
+import static com.kimoji.kniffelig.controller.game.ScoreType.SIXES;
+import static com.kimoji.kniffelig.controller.game.ScoreType.SMALL_STRAIGHT;
+import static com.kimoji.kniffelig.controller.game.ScoreType.THREES;
+import static com.kimoji.kniffelig.controller.game.ScoreType.THREE_OF_A_KIND;
+import static com.kimoji.kniffelig.controller.game.ScoreType.TWOS;
 
-public class PlayerImp implements Player {
+public class PlayerImp implements Player, Serializable {
 
 
     private String name;

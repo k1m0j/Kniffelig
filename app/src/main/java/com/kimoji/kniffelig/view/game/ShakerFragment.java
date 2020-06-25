@@ -63,7 +63,6 @@ public class ShakerFragment extends Fragment {
         currentRound = view.findViewById(R.id.current_Round);
         shakesLeft = view.findViewById(R.id.shakes_left);
 
-        //TODO laut standart MVC ok. Alternativ: View wird nur benachrichtigt?
         currentRound.setText(String.valueOf(playground.getCurrentRound()));
         currentPlayer.setText((playground.getActivePlayerName()));
         shakesLeft.setText(String.valueOf(playground.getLeftTries()));
@@ -84,7 +83,6 @@ public class ShakerFragment extends Fragment {
         //Konsolenausgabe, um Werte zu überprüfen
         printValues();
         final Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.shake);
-        //TODO eigene Klasse?
         final Animation.AnimationListener animationListener = new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -93,14 +91,9 @@ public class ShakerFragment extends Fragment {
             @Override
             public void onAnimationEnd(Animation animation) {
 
-                //Zufälligen Werte erzeugen und in Array speichern
-
                 int[] tempValues = playground.getCurrentDiceValues();
-                //Ressource/IDs der Bilder abhängig von gewürfelten Werten holen
                 ArrayList ressources = getResourcesOwn(tempValues);
-                //Passende Bilder zu Werten anzeigen
                 setImageResourcesOwn(ressources);
-                //Hilfsausgabe
                 Log.i(TAG, "onAnimationEnd: Würfelwerte nach setImageView");
                 printValues();
                 Log.i("lukas", "onAnimationEnd aufgerufen");
@@ -118,6 +111,7 @@ public class ShakerFragment extends Fragment {
             images[i].startAnimation(anim);
         }
     }
+
 
     public void lockDice1(View view) {
         adjustColorToLockStatus(0, imageView1);
@@ -138,6 +132,7 @@ public class ShakerFragment extends Fragment {
     public void lockDice5(View view) {
         adjustColorToLockStatus(4, imageView5);
     }
+
 
     private void adjustColorToLockStatus(int i, ImageView imageView) {
         Log.i(TAG, "onClick: 1 angeklickt!");
@@ -193,4 +188,5 @@ public class ShakerFragment extends Fragment {
             images[i].setImageResource(ressources.get(i));
         }
     }
+
 }
