@@ -6,6 +6,9 @@ import com.kimoji.kniffelig.model.game.GameStatusImp;
 import com.kimoji.kniffelig.model.game.Player;
 import com.kimoji.kniffelig.model.game.PlayerImp;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class PlaygroundImp implements Playground {
 
     private static final Shaker SHAKER = new Shaker();
@@ -15,7 +18,6 @@ public class PlaygroundImp implements Playground {
     private Player[] allPlayers;
 
     private GameStatus gameStatus;
-
 
 
     public PlaygroundImp(String[] playerNames) {
@@ -98,6 +100,15 @@ public class PlaygroundImp implements Playground {
     public String getActivePlayerName() {
         return allPlayers[getActivePlayer()].getName();
     }
+
+    public LinkedList<Integer> getFirstThreeScores() {
+        LinkedList<Integer> list = new LinkedList<>();
+        for (int i = 0; i < allPlayers.length; i++) {
+            allPlayers[i].getScores().forEach(score -> list.add(score.getValue()));
+        }
+        return list;
+    }
+
 
     private void setNextPlayer() {
         if (allPlayers.length - 1 == gameStatus.getActivePlayer()) {

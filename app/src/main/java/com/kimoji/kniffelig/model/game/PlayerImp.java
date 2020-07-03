@@ -19,6 +19,7 @@ import com.kimoji.kniffelig.model.game.score.Twos;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
 import static com.kimoji.kniffelig.controller.game.ScoreType.ACES;
@@ -77,6 +78,11 @@ public class PlayerImp implements Player, Serializable {
     }
 
     @Override
+    public Map<ScoreType, Score> getScoresMap() {
+        return new HashMap<>(scores);
+    }
+
+    @Override
     public Score getScore(ScoreType scoreType) {
         return scores.get(scoreType);
     }
@@ -92,12 +98,27 @@ public class PlayerImp implements Player, Serializable {
     }
 
     @Override
-    public Map<ScoreType, Score> getScores() {
-        return scores;
+    public LinkedList<Score> getScores() {
+        LinkedList<Score> list = new LinkedList<>();
+        list.add(scores.get(ACES));
+        list.add(scores.get(TWOS));
+        list.add(scores.get(THREES));
+        list.add(scores.get(FOURS));
+        list.add(scores.get(FIVES));
+        list.add(scores.get(SIXES));
+        list.add(scores.get(THREE_OF_A_KIND));
+        list.add(scores.get(FOUR_OF_A_KIND));
+        list.add(scores.get(FULLHOUSE));
+        list.add(scores.get(SMALL_STRAIGHT));
+        list.add(scores.get(LARGE_STRAIGHT));
+        list.add(scores.get(KNIFFEL));
+        list.add(scores.get(CHANCE));
+        return list;
     }
 
     @Override
     public void setScores(Map<ScoreType, Score> scores) {
         this.scores = scores;
     }
+
 }

@@ -2,6 +2,9 @@ package com.kimoji.kniffelig.controller.game;
 
 import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Interface for the game controller
  */
@@ -85,4 +88,5 @@ public interface Playground {
      */
     boolean isLocked(int index);
 
+    LinkedList<Integer> getFirstThreeScores();
 }

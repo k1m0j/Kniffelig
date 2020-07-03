@@ -18,7 +18,7 @@ public class FileManagerImp implements FileManager {
     public static void writeToFile(Context context, Player player) {
         String playerName = player.getName();
 
-        Collection<Score> data = player.getScores().values();
+        Collection<Score> data = player.getScoresMap().values();
         ArrayList<Score> dataArrayList = new ArrayList<>(data);
 
         System.out.println("Following data gets saved: ");

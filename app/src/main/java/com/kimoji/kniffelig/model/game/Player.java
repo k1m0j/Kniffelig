@@ -3,6 +3,7 @@ package com.kimoji.kniffelig.model.game;
 import com.kimoji.kniffelig.controller.game.ScoreType;
 import com.kimoji.kniffelig.model.game.score.Score;
 
+import java.util.LinkedList;
 import java.util.Map;
 
 /**
@@ -28,7 +29,14 @@ public interface Player {
      *
      * @return all scores
      */
-    Map<ScoreType, Score> getScores();
+    Map<ScoreType, Score> getScoresMap();
+
+    /**
+     * Returning all the scores from this customer
+     *
+     * @return all scores
+     */
+    LinkedList<Score> getScores();
 
     /**
      * Returning the points for a specific score
