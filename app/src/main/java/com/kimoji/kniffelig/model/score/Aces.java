@@ -1,4 +1,4 @@
-package com.kimoji.kniffelig.model.game.score;
+package com.kimoji.kniffelig.model.score;
 
 import com.kimoji.kniffelig.controller.game.ScoreCalculator;
 

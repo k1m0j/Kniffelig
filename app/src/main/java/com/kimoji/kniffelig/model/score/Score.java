@@ -1,14 +1,19 @@
-package com.kimoji.kniffelig.model.game.score;
+package com.kimoji.kniffelig.model.score;
 
 import java.io.Serializable;
 
 public abstract class Score implements Serializable {
     private int value = 0;
 
+    private boolean filledIn = false;
+
     public abstract int calculateScore(int[] diceValues);
 
     public void addScoreToScoreboard(int[] diceValues) {
-        setValue(calculateScore(diceValues));
+        if (!filledIn) {
+            setValue(calculateScore(diceValues));
+            filledIn = true;
+        }
     }
 
     public int getValue() {

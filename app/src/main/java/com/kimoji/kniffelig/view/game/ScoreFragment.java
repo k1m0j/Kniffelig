@@ -46,9 +46,14 @@ public class ScoreFragment extends Fragment {
     private List<TextView> scoreTextViews = new ArrayList<>();
 
     //UPPER TOTAL TEXT VIEWS
-    private List<TextView> upperTotal = new LinkedList<>();
-    private List<TextView> bonus = new LinkedList<>();
-    private List<TextView> upperTotalWithBonus = new LinkedList<>();
+    private List<TextView> upperTotalTextViews = new LinkedList<>();
+    private List<TextView> bonusTextViews = new LinkedList<>();
+    private List<TextView> upperTotalWithBonusTextViews = new LinkedList<>();
+
+    //LOWER TOTAL TEXT VIEWS
+    private List<TextView> lowerTotalTextViews = new LinkedList<>();
+    private List<TextView> lowerUpperTotalTextViews = new LinkedList<>();
+    private List<TextView> finalTotalTextViews = new LinkedList<>();
 
     //PLAYER NAME TEXT VIEWS
     private TextView playerOneNameScore;
@@ -108,9 +113,9 @@ public class ScoreFragment extends Fragment {
         scoreTextViews.add(view.findViewById(R.id.player_one_twos));
         scoreTextViews.add(view.findViewById(R.id.player_one_threes));
         scoreTextViews.add(view.findViewById(R.id.player_one_fours));
-        scoreTextViews.add(view.findViewById(R.id.player_four_fives));
-        scoreTextViews.add(view.findViewById(R.id.player_four_sixes));
-        scoreTextViews.add(view.findViewById(R.id.player_four_three_of_a_kind));
+        scoreTextViews.add(view.findViewById(R.id.player_one_fives));
+        scoreTextViews.add(view.findViewById(R.id.player_one_sixes));
+        scoreTextViews.add(view.findViewById(R.id.player_one_three_of_a_kind));
         scoreTextViews.add(view.findViewById(R.id.player_one_four_of_a_kind));
         scoreTextViews.add(view.findViewById(R.id.player_one_full_house));
         scoreTextViews.add(view.findViewById(R.id.player_one_small_straight));
@@ -160,11 +165,35 @@ public class ScoreFragment extends Fragment {
         scoreTextViews.add(view.findViewById(R.id.player_four_kniffel));
         scoreTextViews.add(view.findViewById(R.id.player_four_chance));
 
-        upperTotal.add(view.findViewById(R.id.player_one_upper_total));
-        upperTotal.add(view.findViewById(R.id.player_two_upper_total));
-        upperTotal.add(view.findViewById(R.id.player_three_upper_total));
-        upperTotal.add(view.findViewById(R.id.player_four_upper_total));
+        upperTotalTextViews.add(view.findViewById(R.id.player_one_upper_total));
+        upperTotalTextViews.add(view.findViewById(R.id.player_two_upper_total));
+        upperTotalTextViews.add(view.findViewById(R.id.player_three_upper_total));
+        upperTotalTextViews.add(view.findViewById(R.id.player_four_upper_total));
 
+        bonusTextViews.add(view.findViewById(R.id.player_one_bonus));
+        bonusTextViews.add(view.findViewById(R.id.player_two_bonus));
+        bonusTextViews.add(view.findViewById(R.id.player_three_bonus));
+        bonusTextViews.add(view.findViewById(R.id.player_four_bonus));
+
+        upperTotalWithBonusTextViews.add(view.findViewById(R.id.player_one_upper_total_with_bonus));
+        upperTotalWithBonusTextViews.add(view.findViewById(R.id.player_two_upper_total_with_bonus));
+        upperTotalWithBonusTextViews.add(view.findViewById(R.id.player_three_upper_total_with_bonus));
+        upperTotalWithBonusTextViews.add(view.findViewById(R.id.player_four_upper_total_with_bonus));
+
+        lowerTotalTextViews.add(view.findViewById(R.id.player_one_lower_total));
+        lowerTotalTextViews.add(view.findViewById(R.id.player_two_lower_total));
+        lowerTotalTextViews.add(view.findViewById(R.id.player_three_lower_total));
+        lowerTotalTextViews.add(view.findViewById(R.id.player_four_lower_total));
+
+        lowerUpperTotalTextViews.add(view.findViewById(R.id.player_one_lower_upper_total));
+        lowerUpperTotalTextViews.add(view.findViewById(R.id.player_two_lower_upper_total));
+        lowerUpperTotalTextViews.add(view.findViewById(R.id.player_three_lower_upper_total));
+        lowerUpperTotalTextViews.add(view.findViewById(R.id.player_four_lower_upper_total));
+
+        finalTotalTextViews.add(view.findViewById(R.id.player_one_final_total));
+        finalTotalTextViews.add(view.findViewById(R.id.player_two_final_total));
+        finalTotalTextViews.add(view.findViewById(R.id.player_three_final_total));
+        finalTotalTextViews.add(view.findViewById(R.id.player_four_final_total));
 
         playerOneNameScore = view.findViewById(R.id.player_one_name_score);
         playerOneNameScore.setText(playground.getPlayerName(0));
@@ -194,12 +223,30 @@ public class ScoreFragment extends Fragment {
     }
 
     public void updateView() {
-        List<Integer> scores = playground.getFirstThreeScores();
+        List<Integer> scores = playground.getScores();
         for (int i = 0; i < scores.size(); i++) {
             scoreTextViews.get(i).setText(String.valueOf(scores.get(i)));
         }
 
-        // playground.getUpperScores();
+        List<Integer> upperTotals = playground.getUpperTotals();
+        List<Integer> lowerTotals = playground.getLowerTotals();
+        for (int i = 0; i < upperTotals.size(); i++) {
+            int upperValue = upperTotals.get(i);
+            int lowerValue = lowerTotals.get(i);
+            upperTotalTextViews.get(i).setText(String.valueOf(upperValue));
+            lowerUpperTotalTextViews.get(i).setText(String.valueOf(upperValue));
+
+            if (upperValue >= 63) {
+                bonusTextViews.get(i).setText(String.valueOf(36));
+                upperValue += 36;
+                upperTotalWithBonusTextViews.get(i).setText(String.valueOf(upperValue));
+            } else upperTotalWithBonusTextViews.get(i).setText(String.valueOf(upperValue));
+
+            lowerUpperTotalTextViews.get(i).setText(String.valueOf(upperValue));
+            lowerTotalTextViews.get(i).setText(String.valueOf(lowerValue));
+            finalTotalTextViews.get(i).setText(String.valueOf(upperValue + lowerValue));
+        }
+
     }
 
 }

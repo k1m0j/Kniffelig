@@ -11,8 +11,6 @@ import com.google.android.material.tabs.TabLayout;
 import com.kimoji.kniffelig.R;
 import com.kimoji.kniffelig.controller.game.Playground;
 import com.kimoji.kniffelig.controller.game.PlaygroundImp;
-import com.kimoji.kniffelig.model.game.Player;
-import com.kimoji.kniffelig.model.game.PlayerImp;
 
 
 public class GameActivity extends AppCompatActivity {

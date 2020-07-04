@@ -1,7 +1,7 @@
-package com.kimoji.kniffelig.model.game;
+package com.kimoji.kniffelig.model;
 
 import com.kimoji.kniffelig.controller.game.ScoreType;
-import com.kimoji.kniffelig.model.game.score.Score;
+import com.kimoji.kniffelig.model.score.Score;
 
 import java.util.LinkedList;
 import java.util.Map;
@@ -60,4 +60,8 @@ public interface Player {
     void setScores(Map<ScoreType, Score> scores);
 
     int getUpperTotal();
+
+    void addScore(ScoreType scoreType, int[] dicesValues);
+
+    int getLowerTotal();
 }

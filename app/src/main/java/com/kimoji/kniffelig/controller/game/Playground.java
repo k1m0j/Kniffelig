@@ -1,11 +1,10 @@
 package com.kimoji.kniffelig.controller.game;
 
 import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
-import com.kimoji.kniffelig.model.game.GameStatus;
-import com.kimoji.kniffelig.model.game.Player;
+import com.kimoji.kniffelig.model.GameStatus;
+import com.kimoji.kniffelig.model.Player;
 
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Interface for the game controller
@@ -90,7 +89,7 @@ public interface Playground {
      */
     boolean isLocked(int index);
 
-    LinkedList<Integer> getFirstThreeScores();
+    LinkedList<Integer> getScores();
 
     String getPlayerName(int index);
 
@@ -130,4 +129,9 @@ public interface Playground {
     Shaker getShaker();
 
     void setShaker(Shaker shaker);
+
+    LinkedList<Integer> getUpperTotals();
+
+    LinkedList<Integer> getLowerTotals();
+
 }

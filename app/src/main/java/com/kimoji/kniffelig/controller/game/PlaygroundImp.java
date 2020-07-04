@@ -1,10 +1,10 @@
 package com.kimoji.kniffelig.controller.game;
 
 import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
-import com.kimoji.kniffelig.model.game.GameStatus;
-import com.kimoji.kniffelig.model.game.GameStatusImp;
-import com.kimoji.kniffelig.model.game.Player;
-import com.kimoji.kniffelig.model.game.PlayerImp;
+import com.kimoji.kniffelig.model.GameStatus;
+import com.kimoji.kniffelig.model.GameStatusImp;
+import com.kimoji.kniffelig.model.Player;
+import com.kimoji.kniffelig.model.PlayerImp;
 
 import java.util.LinkedList;
 
@@ -69,12 +69,14 @@ public class PlaygroundImp implements Playground {
     @Override
     public void addScore(ScoreType scoreType) {
         if (gameStatus.getCurrentRound() < ROUND_NUMBER) {
-            allPlayers[getActivePlayer()].getScore(scoreType).addScoreToScoreboard(shaker.getValues());
-            gameStatus.setLeftTries(TRIES);
-            gameStatus.setCurrentRound(getCurrentRound() + 1);
-            shaker.setAllFree();
-            setNextPlayer();
             try {
+                allPlayers[getActivePlayer()].addScore(scoreType, SHAKER.getValues());
+                gameStatus.setLeftTries(TRIES);
+                if (getActivePlayer() == allPlayers.length - 1) {
+                    gameStatus.setCurrentRound(getCurrentRound() + 1);
+                }
+                shaker.setAllFree();
+                setNextPlayer();
                 shake();
             } catch (InvalidUserInteractionException e) {
                 e.printStackTrace();
@@ -105,7 +107,7 @@ public class PlaygroundImp implements Playground {
         return allPlayers[getActivePlayer()].getName();
     }
 
-    public LinkedList<Integer> getFirstThreeScores() {
+    public LinkedList<Integer> getScores() {
         LinkedList<Integer> list = new LinkedList<>();
         for (int i = 0; i < allPlayers.length; i++) {
             allPlayers[i].getScores().forEach(score -> list.add(score.getValue()));
@@ -120,6 +122,24 @@ public class PlaygroundImp implements Playground {
         } else {
             return allPlayers[index].getName();
         }
+    }
+
+    @Override
+    public LinkedList<Integer> getUpperTotals() {
+        LinkedList<Integer> upperTotals = new LinkedList<>();
+        for (Player player : allPlayers) {
+            upperTotals.add(player.getUpperTotal());
+        }
+        return upperTotals;
+    }
+
+    @Override
+    public LinkedList<Integer> getLowerTotals() {
+        LinkedList<Integer> upperTotals = new LinkedList<>();
+        for (Player player : allPlayers) {
+            upperTotals.add(player.getLowerTotal());
+        }
+        return upperTotals;
     }
 
     @Override

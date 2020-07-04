@@ -1,21 +1,21 @@
-package com.kimoji.kniffelig.model.game;
+package com.kimoji.kniffelig.model;
 
 
 import com.kimoji.kniffelig.controller.game.ScoreType;
 import com.kimoji.kniffelig.model.game.score.Aces;
-import com.kimoji.kniffelig.model.game.score.Chance;
-import com.kimoji.kniffelig.model.game.score.Fives;
-import com.kimoji.kniffelig.model.game.score.FourOfAKind;
-import com.kimoji.kniffelig.model.game.score.Fours;
-import com.kimoji.kniffelig.model.game.score.Fullhouse;
-import com.kimoji.kniffelig.model.game.score.Kniffel;
-import com.kimoji.kniffelig.model.game.score.LargeStraight;
-import com.kimoji.kniffelig.model.game.score.Score;
-import com.kimoji.kniffelig.model.game.score.Sixes;
-import com.kimoji.kniffelig.model.game.score.SmallStraight;
-import com.kimoji.kniffelig.model.game.score.ThreeOfAKind;
-import com.kimoji.kniffelig.model.game.score.Threes;
-import com.kimoji.kniffelig.model.game.score.Twos;
+import com.kimoji.kniffelig.model.score.Chance;
+import com.kimoji.kniffelig.model.score.Fives;
+import com.kimoji.kniffelig.model.score.FourOfAKind;
+import com.kimoji.kniffelig.model.score.Fours;
+import com.kimoji.kniffelig.model.score.Fullhouse;
+import com.kimoji.kniffelig.model.score.Kniffel;
+import com.kimoji.kniffelig.model.score.LargeStraight;
+import com.kimoji.kniffelig.model.score.Score;
+import com.kimoji.kniffelig.model.score.Sixes;
+import com.kimoji.kniffelig.model.score.SmallStraight;
+import com.kimoji.kniffelig.model.score.ThreeOfAKind;
+import com.kimoji.kniffelig.model.score.Threes;
+import com.kimoji.kniffelig.model.score.Twos;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -35,7 +35,6 @@ import static com.kimoji.kniffelig.controller.game.ScoreType.SMALL_STRAIGHT;
 import static com.kimoji.kniffelig.controller.game.ScoreType.THREES;
 import static com.kimoji.kniffelig.controller.game.ScoreType.THREE_OF_A_KIND;
 import static com.kimoji.kniffelig.controller.game.ScoreType.TWOS;
-import static java.lang.Enum.valueOf;
 
 public class PlayerImp implements Player, Serializable {
 
@@ -123,14 +122,32 @@ public class PlayerImp implements Player, Serializable {
     }
 
     @Override
+    public void addScore(ScoreType scoreType, int[] dicesValues) {
+        scores.get(scoreType).addScoreToScoreboard(dicesValues);
+    }
+
+    @Override
     public int getUpperTotal() {
-        int total;
-        total = scores.get(ACES).getValue();
-        total = scores.get(TWOS).getValue();
-        total = scores.get(THREES).getValue();
-        total = scores.get(FOURS).getValue();
-        total = scores.get(FIVES).getValue();
-        total = scores.get(SIXES).getValue();
+        int total = 0;
+        total += scores.get(ACES).getValue();
+        total += scores.get(TWOS).getValue();
+        total += scores.get(THREES).getValue();
+        total += scores.get(FOURS).getValue();
+        total += scores.get(FIVES).getValue();
+        total += scores.get(SIXES).getValue();
+        return total;
+    }
+
+    @Override
+    public int getLowerTotal() {
+        int total = 0;
+        total += scores.get(THREE_OF_A_KIND).getValue();
+        total += scores.get(FOUR_OF_A_KIND).getValue();
+        total += scores.get(FULLHOUSE).getValue();
+        total += scores.get(SMALL_STRAIGHT).getValue();
+        total += scores.get(LARGE_STRAIGHT).getValue();
+        total += scores.get(KNIFFEL).getValue();
+        total += scores.get(CHANCE).getValue();
         return total;
     }
 

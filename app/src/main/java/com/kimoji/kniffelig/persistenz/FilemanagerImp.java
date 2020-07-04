@@ -5,8 +5,8 @@ import android.os.Environment;
 import android.util.Log;
 
 import com.kimoji.kniffelig.controller.game.Shaker;
-import com.kimoji.kniffelig.model.game.GameStatus;
-import com.kimoji.kniffelig.model.game.Player;
+import com.kimoji.kniffelig.model.GameStatus;
+import com.kimoji.kniffelig.model.Player;
 
 import java.io.File;
 import java.io.FileInputStream;
