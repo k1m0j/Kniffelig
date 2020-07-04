@@ -69,8 +69,6 @@ public class LocalLobbyFragment extends Fragment {
     }
 
     public void openPlayingInterface(View view) {
-
-
         Intent intent = new Intent(getActivity(), GameActivity.class);
         startActivity(intent);
         sendData();

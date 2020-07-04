@@ -51,10 +51,10 @@ public class ScoreFragment extends Fragment {
     private List<TextView> upperTotalWithBonus = new LinkedList<>();
 
     //PLAYER NAME TEXT VIEWS
-    private TextView playerOneName;
-    private TextView playerTwoName;
-    private TextView playerThreeName;
-    private TextView playerFourName;
+    private TextView playerOneNameScore;
+    private TextView playerTwoNameScore;
+    private TextView playerThreeNameScore;
+    private TextView playerFourNameScore;
 
     public ScoreFragment(Playground playground) {
         this.playground = playground;
@@ -165,16 +165,19 @@ public class ScoreFragment extends Fragment {
         upperTotal.add(view.findViewById(R.id.player_three_upper_total));
         upperTotal.add(view.findViewById(R.id.player_four_upper_total));
 
-        /*
-        playerOneName.findViewById(R.id.player_one_nameo);
-        playerOneName.setText(playground.getPlayerName(0));
-        playerTwoName.findViewById(R.id.player_two_name);
-        playerTwoName.setText(playground.getPlayerName(1));
-        playerThreeName.findViewById(R.id.player_three_name);
-        playerThreeName.setText(playground.getPlayerName(2));
-        playerFourName.findViewById(R.id.player_four_name);
-        playerFourName.setText(playground.getPlayerName(3));
-        */
+
+        playerOneNameScore = view.findViewById(R.id.player_one_name_score);
+        playerOneNameScore.setText(playground.getPlayerName(0));
+
+        playerTwoNameScore = view.findViewById(R.id.player_two_name_score);
+        playerTwoNameScore.setText(playground.getPlayerName(1));
+
+        playerThreeNameScore = view.findViewById(R.id.player_three_name_score);
+        playerThreeNameScore.setText(playground.getPlayerName(2));
+
+        playerFourNameScore = view.findViewById(R.id.player_four_name_score);
+        playerFourNameScore.setText(playground.getPlayerName(3));
+
         return view;
     }
 
