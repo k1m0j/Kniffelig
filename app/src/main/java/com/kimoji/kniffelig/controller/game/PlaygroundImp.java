@@ -7,11 +7,10 @@ import com.kimoji.kniffelig.model.game.Player;
 import com.kimoji.kniffelig.model.game.PlayerImp;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class PlaygroundImp implements Playground {
 
-    private static final Shaker SHAKER = new Shaker();
+    private Shaker shaker = new Shaker();
     private static final int ROUND_NUMBER = 13;
     private static final int TRIES = 3;
 
@@ -35,7 +34,7 @@ public class PlaygroundImp implements Playground {
     @Override
     public void shake() throws InvalidUserInteractionException {
         if (gameStatus.getLeftTries() > 0) {
-            SHAKER.shake();
+            shaker.shake();
             gameStatus.setLeftTries(gameStatus.getLeftTries() - 1);
         } else {
             throw new InvalidUserInteractionException("There are no left tries for " + allPlayers[gameStatus.getActivePlayer()].getName() + "!");
@@ -44,36 +43,36 @@ public class PlaygroundImp implements Playground {
 
     @Override
     public void lockDice(int index) {
-        SHAKER.lockDice(index);
+        shaker.lockDice(index);
     }
 
     @Override
     public void unlockDice(int index) {
-        SHAKER.freeDice(index);
+        shaker.freeDice(index);
     }
 
     @Override
     public void toggleLock(int index) {
-        SHAKER.toggleLock(index);
+        shaker.toggleLock(index);
     }
 
     @Override
     public int[] getCurrentDiceValues() {
-        return SHAKER.getValues();
+        return shaker.getValues();
     }
 
     @Override
     public boolean isLocked(int index) {
-        return SHAKER.isLocked(index);
+        return shaker.isLocked(index);
     }
 
     @Override
     public void addScore(ScoreType scoreType) {
         if (gameStatus.getCurrentRound() < ROUND_NUMBER) {
-            allPlayers[getActivePlayer()].getScore(scoreType).addScoreToScoreboard(SHAKER.getValues());
+            allPlayers[getActivePlayer()].getScore(scoreType).addScoreToScoreboard(shaker.getValues());
             gameStatus.setLeftTries(TRIES);
             gameStatus.setCurrentRound(getCurrentRound() + 1);
-            SHAKER.setAllFree();
+            shaker.setAllFree();
             setNextPlayer();
             try {
                 shake();
@@ -123,6 +122,26 @@ public class PlaygroundImp implements Playground {
         }
     }
 
+    @Override
+    public GameStatus getGameStatus() {
+        return gameStatus;
+    }
+
+    @Override
+    public void setGameStatus(GameStatus gameStatus) {
+        this.gameStatus = gameStatus;
+    }
+
+    @Override
+    public void setAllPlayers(Player[] allPlayers) {
+        this.allPlayers = allPlayers;
+    }
+
+    @Override
+    public Player[] getAllPlayers() {
+        return allPlayers;
+    }
+
 
     private void setNextPlayer() {
         if (allPlayers.length - 1 == gameStatus.getActivePlayer()) {
@@ -131,6 +150,16 @@ public class PlaygroundImp implements Playground {
             gameStatus.setActivePlayer(getActivePlayer() + 1);
 
         }
+    }
+
+    @Override
+    public Shaker getShaker() {
+        return shaker;
+    }
+
+    @Override
+    public void setShaker(Shaker shaker) {
+        this.shaker = shaker;
     }
 }
 

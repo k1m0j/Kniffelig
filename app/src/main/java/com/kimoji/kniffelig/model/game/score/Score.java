@@ -1,6 +1,8 @@
 package com.kimoji.kniffelig.model.game.score;
 
-public abstract class Score {
+import java.io.Serializable;
+
+public abstract class Score implements Serializable {
     private int value = 0;
 
     public abstract int calculateScore(int[] diceValues);

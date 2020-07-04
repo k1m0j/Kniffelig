@@ -4,9 +4,10 @@ package com.kimoji.kniffelig.controller.game;
 import com.kimoji.kniffelig.model.game.DiceImp;
 import com.kimoji.kniffelig.model.game.Dice;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Shaker {
+public class Shaker implements Serializable {
     private static final String TAG = "Shaker";
 
     Random random = new Random();
@@ -17,7 +18,6 @@ public class Shaker {
         for (Dice dice : dices) {
             dice.setValue(getNewDiceValue());
         }
-        System.out.println("fuck dich");
         System.out.println(dices[0].getValue() + "lol" + dices[1].getValue() + "" + dices[2].getValue() + "" + dices[3].getValue() + "" + dices[4]
                 .getValue() + "");
     }

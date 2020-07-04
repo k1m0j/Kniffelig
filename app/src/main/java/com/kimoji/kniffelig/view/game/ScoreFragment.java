@@ -193,7 +193,7 @@ public class ScoreFragment extends Fragment {
         updateView();
     }
 
-    private void updateView() {
+    public void updateView() {
         List<Integer> scores = playground.getFirstThreeScores();
         for (int i = 0; i < scores.size(); i++) {
             scoreTextViews.get(i).setText(String.valueOf(scores.get(i)));
