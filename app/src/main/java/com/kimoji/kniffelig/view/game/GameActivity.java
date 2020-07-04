@@ -38,7 +38,6 @@ public class GameActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        //TODO Player Name
 
         final String sender = this.getIntent().getExtras().getString("SENDER_KEY");
 

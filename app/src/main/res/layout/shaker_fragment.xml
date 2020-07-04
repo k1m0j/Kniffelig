@@ -160,4 +160,26 @@
         app:layout_constraintTop_toBottomOf="@+id/shakes_left_description"
         app:layout_constraintVertical_bias="0.057" />
 
+    <Button
+        android:id="@+id/save"
+        android:layout_width="62dp"
+        android:layout_height="36dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/shake_Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDice4" />
+
+    <Button
+        android:id="@+id/load"
+        android:layout_width="62dp"
+        android:layout_height="36dp"
+        android:text="Load"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toEndOf="@+id/shake_Button"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDice4" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

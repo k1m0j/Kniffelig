@@ -1,7 +1,9 @@
 package com.kimoji.kniffelig.model.game;
 
 
-public class DiceImp implements Dice {
+import java.io.Serializable;
+
+public class DiceImp implements Dice, Serializable {
     private static final String TAG = DiceImp.class.getSimpleName();
 
     private final int DICE_MIN = 1;

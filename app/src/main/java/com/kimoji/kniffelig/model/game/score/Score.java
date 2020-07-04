@@ -1,8 +1,8 @@
 package com.kimoji.kniffelig.model.game.score;
 
-import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
+import java.io.Serializable;
 
-public abstract class Score {
+public abstract class Score implements Serializable {
     private int value = 0;
 
     private boolean filledIn = false;

@@ -6,42 +6,42 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:stretchColumns="1,2,3,4"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        android:stretchColumns="1,2,3,4">
 
         <TableRow>
 
             <TextView
                 android:id="@+id/player_one_name_score"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="Player1"></TextView>
+                android:text="Player1"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_name_score"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="Player2"></TextView>
+                android:text="Player2"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_name_score"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="Player3"></TextView>
+                android:text="Player3"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_name_score"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="Player4"></TextView>
+                android:text="Player4"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
         </TableRow>
 
         <TableRow>
@@ -53,34 +53,34 @@
             <TextView
                 android:id="@+id/player_one_aces"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_aces"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_aces"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_aces"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -93,34 +93,34 @@
             <TextView
                 android:id="@+id/player_one_twos"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_twos"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_twos"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_twos"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -133,34 +133,34 @@
             <TextView
                 android:id="@+id/player_one_threes"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_threes"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_threes"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_threes"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -173,34 +173,34 @@
             <TextView
                 android:id="@+id/player_one_fours"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_fours"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_fours"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_fours"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -213,34 +213,34 @@
             <TextView
                 android:id="@+id/player_one_fives"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_fives"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_fives"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_fives"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -253,157 +253,157 @@
             <TextView
                 android:id="@+id/player_one_sixes"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_sixes"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_sixes"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_sixes"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
         <TableRow>
 
             <TextView
-                android:text="Upper Score"
                 android:gravity="center"
+                android:text="Upper Score"
                 android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_one_upper_total"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_upper_total"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_upper_total"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_upper_total"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
         <TableRow>
 
             <TextView
-                android:text="Bonus"
                 android:gravity="center"
+                android:text="Bonus"
                 android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_one_bonus"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_bonus"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_bonus"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_bonus"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
         <TableRow>
 
             <TextView
-                android:text="Upper Total"
                 android:gravity="center"
+                android:text="Upper Total"
                 android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_one_upper_total_with_bonus"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_upper_total_with_bonus"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_upper_total_with_bonus"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_upper_total_with_bonus"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -416,34 +416,34 @@
             <TextView
                 android:id="@+id/player_one_three_of_a_kind"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_three_of_a_kind"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_three_of_a_kind"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_three_of_a_kind"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -456,34 +456,34 @@
             <TextView
                 android:id="@+id/player_one_four_of_a_kind"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_four_of_a_kind"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_four_of_a_kind"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_four_of_a_kind"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -496,34 +496,34 @@
             <TextView
                 android:id="@+id/player_one_full_house"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_full_house"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_full_house"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_full_house"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -536,34 +536,34 @@
             <TextView
                 android:id="@+id/player_one_small_straight"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_small_straight"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_small_straight"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_small_straight"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -576,34 +576,34 @@
             <TextView
                 android:id="@+id/player_one_large_straight"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_large_straight"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_large_straight"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_large_straight"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -616,34 +616,34 @@
             <TextView
                 android:id="@+id/player_one_kniffel"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_kniffel"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_kniffel"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_kniffel"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
@@ -656,157 +656,157 @@
             <TextView
                 android:id="@+id/player_one_chance"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_chance"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_chance"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_chance"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
         <TableRow>
 
             <TextView
-                android:text="Lower Score"
                 android:gravity="center"
+                android:text="Lower Score"
                 android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_one_lower_total"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_lower_total"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_lower_total"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_lower_total"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
         <TableRow>
 
             <TextView
-                android:text="Upper total"
                 android:gravity="center"
+                android:text="Upper total"
                 android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_one_lower_upper_total"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_lower_upper_total"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_lower_upper_total"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_lower_upper_total"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 
         <TableRow>
 
             <TextView
-                android:text="Total scoreType"
                 android:gravity="center"
+                android:text="Total scoreType"
                 android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_one_final_total"
                 android:layout_column="1"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_two_final_total"
                 android:layout_column="2"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_three_final_total"
                 android:layout_column="3"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/player_four_final_total"
                 android:layout_column="4"
-                android:textSize="20dp"
-                android:textStyle="bold"
                 android:gravity="center"
-                android:text="0"></TextView>
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
 
         </TableRow>
 

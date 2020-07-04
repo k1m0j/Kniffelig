@@ -4,9 +4,10 @@ package com.kimoji.kniffelig.controller.game;
 import com.kimoji.kniffelig.model.game.DiceImp;
 import com.kimoji.kniffelig.model.game.Dice;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Shaker {
+public class Shaker implements Serializable {
     private static final String TAG = "Shaker";
 
     Random random = new Random();

@@ -1,6 +1,8 @@
 package com.kimoji.kniffelig.controller.game;
 
 import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
+import com.kimoji.kniffelig.model.game.GameStatus;
+import com.kimoji.kniffelig.model.game.Player;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -92,6 +94,42 @@ public interface Playground {
 
     String getPlayerName(int index);
 
+    /**
+     * Returns current gameStatus
+     *
+     * @return
+     */
+    GameStatus getGameStatus();
+
+    /**
+     * sets current gameStatus
+     *
+     * @param gameStatus
+     */
+    void setGameStatus(GameStatus gameStatus);
+
+    /**
+     * returns in game involved player
+     *
+     * @return
+     */
+    Player[] getAllPlayers();
+
+    /**
+     * sets players
+     *
+     * @param allPlayers
+     */
+    void setAllPlayers(Player[] allPlayers);
+
+    /**
+     * returns game Shaker
+     *
+     * @return Shaker
+     */
+    Shaker getShaker();
+
+    void setShaker(Shaker shaker);
     LinkedList<Integer> getUpperTotals();
 
     LinkedList<Integer> getLowerTotals();
