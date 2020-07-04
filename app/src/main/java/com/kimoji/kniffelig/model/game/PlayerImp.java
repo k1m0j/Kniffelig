@@ -2,6 +2,7 @@ package com.kimoji.kniffelig.model.game;
 
 
 import com.kimoji.kniffelig.controller.game.ScoreType;
+import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
 import com.kimoji.kniffelig.model.game.score.Aces;
 import com.kimoji.kniffelig.model.game.score.Chance;
 import com.kimoji.kniffelig.model.game.score.Fives;
@@ -123,14 +124,32 @@ public class PlayerImp implements Player, Serializable {
     }
 
     @Override
+    public void addScore(ScoreType scoreType, int[] dicesValues) {
+        scores.get(scoreType).addScoreToScoreboard(dicesValues);
+    }
+
+    @Override
     public int getUpperTotal() {
-        int total;
-        total = scores.get(ACES).getValue();
-        total = scores.get(TWOS).getValue();
-        total = scores.get(THREES).getValue();
-        total = scores.get(FOURS).getValue();
-        total = scores.get(FIVES).getValue();
-        total = scores.get(SIXES).getValue();
+        int total = 0;
+        total += scores.get(ACES).getValue();
+        total += scores.get(TWOS).getValue();
+        total += scores.get(THREES).getValue();
+        total += scores.get(FOURS).getValue();
+        total += scores.get(FIVES).getValue();
+        total += scores.get(SIXES).getValue();
+        return total;
+    }
+
+    @Override
+    public int getLowerTotal() {
+        int total = 0;
+        total += scores.get(THREE_OF_A_KIND).getValue();
+        total += scores.get(FOUR_OF_A_KIND).getValue();
+        total += scores.get(FULLHOUSE).getValue();
+        total += scores.get(SMALL_STRAIGHT).getValue();
+        total += scores.get(LARGE_STRAIGHT).getValue();
+        total += scores.get(KNIFFEL).getValue();
+        total += scores.get(CHANCE).getValue();
         return total;
     }
 

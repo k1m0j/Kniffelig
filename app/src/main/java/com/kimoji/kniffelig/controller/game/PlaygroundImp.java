@@ -70,12 +70,14 @@ public class PlaygroundImp implements Playground {
     @Override
     public void addScore(ScoreType scoreType) {
         if (gameStatus.getCurrentRound() < ROUND_NUMBER) {
-            allPlayers[getActivePlayer()].getScore(scoreType).addScoreToScoreboard(SHAKER.getValues());
-            gameStatus.setLeftTries(TRIES);
-            gameStatus.setCurrentRound(getCurrentRound() + 1);
-            SHAKER.setAllFree();
-            setNextPlayer();
             try {
+                allPlayers[getActivePlayer()].addScore(scoreType, SHAKER.getValues());
+                gameStatus.setLeftTries(TRIES);
+                if (getActivePlayer() == allPlayers.length - 1) {
+                    gameStatus.setCurrentRound(getCurrentRound() + 1);
+                }
+                SHAKER.setAllFree();
+                setNextPlayer();
                 shake();
             } catch (InvalidUserInteractionException e) {
                 e.printStackTrace();
@@ -106,7 +108,7 @@ public class PlaygroundImp implements Playground {
         return allPlayers[getActivePlayer()].getName();
     }
 
-    public LinkedList<Integer> getFirstThreeScores() {
+    public LinkedList<Integer> getScores() {
         LinkedList<Integer> list = new LinkedList<>();
         for (int i = 0; i < allPlayers.length; i++) {
             allPlayers[i].getScores().forEach(score -> list.add(score.getValue()));
@@ -123,6 +125,24 @@ public class PlaygroundImp implements Playground {
         }
     }
 
+    @Override
+    public LinkedList<Integer> getUpperTotals() {
+        LinkedList<Integer> upperTotals = new LinkedList<>();
+        for (Player player : allPlayers) {
+            upperTotals.add(player.getUpperTotal());
+        }
+        return upperTotals;
+    }
+
+    @Override
+    public LinkedList<Integer> getLowerTotals() {
+        LinkedList<Integer> upperTotals = new LinkedList<>();
+        for (Player player : allPlayers) {
+            upperTotals.add(player.getLowerTotal());
+        }
+        return upperTotals;
+    }
+
 
     private void setNextPlayer() {
         if (allPlayers.length - 1 == gameStatus.getActivePlayer()) {
@@ -132,5 +152,6 @@ public class PlaygroundImp implements Playground {
 
         }
     }
+
 }
 

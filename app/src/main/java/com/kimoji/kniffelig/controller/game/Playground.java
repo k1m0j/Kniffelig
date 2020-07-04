@@ -88,8 +88,12 @@ public interface Playground {
      */
     boolean isLocked(int index);
 
-    LinkedList<Integer> getFirstThreeScores();
+    LinkedList<Integer> getScores();
 
     String getPlayerName(int index);
+
+    LinkedList<Integer> getUpperTotals();
+
+    LinkedList<Integer> getLowerTotals();
 
 }

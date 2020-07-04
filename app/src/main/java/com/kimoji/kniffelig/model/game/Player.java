@@ -1,6 +1,7 @@
 package com.kimoji.kniffelig.model.game;
 
 import com.kimoji.kniffelig.controller.game.ScoreType;
+import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
 import com.kimoji.kniffelig.model.game.score.Score;
 
 import java.util.LinkedList;
@@ -60,4 +61,8 @@ public interface Player {
     void setScores(Map<ScoreType, Score> scores);
 
     int getUpperTotal();
+
+    void addScore(ScoreType scoreType, int[] dicesValues);
+
+    int getLowerTotal();
 }
