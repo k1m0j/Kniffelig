@@ -2,7 +2,7 @@ package com.kimoji.kniffelig.controller.game;
 
 
 import com.kimoji.kniffelig.model.DiceImp;
-import com.kimoji.kniffelig.model.game.Dice;
+import com.kimoji.kniffelig.model.Dice;
 
 import java.io.Serializable;
 import java.util.Random;

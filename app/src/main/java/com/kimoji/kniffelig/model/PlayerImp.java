@@ -2,7 +2,7 @@ package com.kimoji.kniffelig.model;
 
 
 import com.kimoji.kniffelig.controller.game.ScoreType;
-import com.kimoji.kniffelig.model.game.score.Aces;
+import com.kimoji.kniffelig.model.score.Aces;
 import com.kimoji.kniffelig.model.score.Chance;
 import com.kimoji.kniffelig.model.score.Fives;
 import com.kimoji.kniffelig.model.score.FourOfAKind;
