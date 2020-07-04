@@ -67,7 +67,7 @@ public class ShakerFragment extends Fragment {
         currentPlayer.setText((playground.getActivePlayerName()));
         shakesLeft.setText(String.valueOf(playground.getLeftTries()));
 
-        setImagesToDiceValue();
+        updateView();
 
         setAllDicesColorRed();
 
@@ -139,24 +139,19 @@ public class ShakerFragment extends Fragment {
         adjustColorToLockStatus(4, imageView5);
     }
 
-
-    private void adjustColorToLockStatus(int i, ImageView imageView) {
-        Log.i(TAG, "onClick: 1 angeklickt!");
-        if (playground.isLocked(i) == false) {
-            playground.lockDice(i);
-            imageView.setColorFilter(Color.GREEN);
-        } else {
-            playground.unlockDice(i);
-            imageView.setColorFilter(Color.RED);
-        }
-    }
-
     public void setAllDicesColorRed() {
         imageView1.setColorFilter(Color.RED);
         imageView2.setColorFilter(Color.RED);
         imageView3.setColorFilter(Color.RED);
         imageView4.setColorFilter(Color.RED);
         imageView5.setColorFilter(Color.RED);
+    }
+
+    public void updateView() {
+        setImagesToDiceValue();
+        shakesLeft.setText(String.valueOf(playground.getLeftTries()));
+        currentRound.setText(String.valueOf(playground.getCurrentRound()));
+        currentPlayer.setText(playground.getActivePlayerName());
     }
 
 
@@ -186,14 +181,14 @@ public class ShakerFragment extends Fragment {
         return temp;
     }
 
-    public TextView getCurrentPlayer() {
-        return currentPlayer;
-    }
-
-    public void updateView() {
-        setImagesToDiceValue();
-        shakesLeft.setText(String.valueOf(playground.getLeftTries()));
-        currentRound.setText(String.valueOf(playground.getCurrentRound()));
-        currentPlayer.setText(playground.getActivePlayerName());
+    private void adjustColorToLockStatus(int i, ImageView imageView) {
+        Log.i(TAG, "onClick: 1 angeklickt!");
+        if (playground.isLocked(i) == false) {
+            playground.lockDice(i);
+            imageView.setColorFilter(Color.GREEN);
+        } else {
+            playground.unlockDice(i);
+            imageView.setColorFilter(Color.RED);
+        }
     }
 }
