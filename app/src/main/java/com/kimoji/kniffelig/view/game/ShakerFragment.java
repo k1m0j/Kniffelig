@@ -20,8 +20,6 @@ import androidx.fragment.app.Fragment;
 import com.kimoji.kniffelig.R;
 import com.kimoji.kniffelig.controller.game.Playground;
 import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
-import com.kimoji.kniffelig.model.game.GameStatus;
-import com.kimoji.kniffelig.model.game.Player;
 import com.kimoji.kniffelig.persistenz.Filemanager;
 import com.kimoji.kniffelig.persistenz.FilemanagerImp;
 

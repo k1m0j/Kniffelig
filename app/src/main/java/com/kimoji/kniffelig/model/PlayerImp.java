@@ -1,22 +1,21 @@
-package com.kimoji.kniffelig.model.game;
+package com.kimoji.kniffelig.model;
 
 
 import com.kimoji.kniffelig.controller.game.ScoreType;
-import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
 import com.kimoji.kniffelig.model.game.score.Aces;
-import com.kimoji.kniffelig.model.game.score.Chance;
-import com.kimoji.kniffelig.model.game.score.Fives;
-import com.kimoji.kniffelig.model.game.score.FourOfAKind;
-import com.kimoji.kniffelig.model.game.score.Fours;
-import com.kimoji.kniffelig.model.game.score.Fullhouse;
-import com.kimoji.kniffelig.model.game.score.Kniffel;
-import com.kimoji.kniffelig.model.game.score.LargeStraight;
-import com.kimoji.kniffelig.model.game.score.Score;
-import com.kimoji.kniffelig.model.game.score.Sixes;
-import com.kimoji.kniffelig.model.game.score.SmallStraight;
-import com.kimoji.kniffelig.model.game.score.ThreeOfAKind;
-import com.kimoji.kniffelig.model.game.score.Threes;
-import com.kimoji.kniffelig.model.game.score.Twos;
+import com.kimoji.kniffelig.model.score.Chance;
+import com.kimoji.kniffelig.model.score.Fives;
+import com.kimoji.kniffelig.model.score.FourOfAKind;
+import com.kimoji.kniffelig.model.score.Fours;
+import com.kimoji.kniffelig.model.score.Fullhouse;
+import com.kimoji.kniffelig.model.score.Kniffel;
+import com.kimoji.kniffelig.model.score.LargeStraight;
+import com.kimoji.kniffelig.model.score.Score;
+import com.kimoji.kniffelig.model.score.Sixes;
+import com.kimoji.kniffelig.model.score.SmallStraight;
+import com.kimoji.kniffelig.model.score.ThreeOfAKind;
+import com.kimoji.kniffelig.model.score.Threes;
+import com.kimoji.kniffelig.model.score.Twos;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -36,7 +35,6 @@ import static com.kimoji.kniffelig.controller.game.ScoreType.SMALL_STRAIGHT;
 import static com.kimoji.kniffelig.controller.game.ScoreType.THREES;
 import static com.kimoji.kniffelig.controller.game.ScoreType.THREE_OF_A_KIND;
 import static com.kimoji.kniffelig.controller.game.ScoreType.TWOS;
-import static java.lang.Enum.valueOf;
 
 public class PlayerImp implements Player, Serializable {
 

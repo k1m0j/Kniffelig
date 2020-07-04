@@ -1,13 +1,12 @@
 package com.kimoji.kniffelig.controller.game;
 
 import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
-import com.kimoji.kniffelig.model.game.GameStatus;
-import com.kimoji.kniffelig.model.game.GameStatusImp;
-import com.kimoji.kniffelig.model.game.Player;
-import com.kimoji.kniffelig.model.game.PlayerImp;
+import com.kimoji.kniffelig.model.GameStatus;
+import com.kimoji.kniffelig.model.GameStatusImp;
+import com.kimoji.kniffelig.model.Player;
+import com.kimoji.kniffelig.model.PlayerImp;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class PlaygroundImp implements Playground {
 

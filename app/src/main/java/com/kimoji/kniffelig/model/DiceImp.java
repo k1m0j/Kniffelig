@@ -1,4 +1,4 @@
-package com.kimoji.kniffelig.model.game;
+package com.kimoji.kniffelig.model;
 
 
 import java.io.Serializable;

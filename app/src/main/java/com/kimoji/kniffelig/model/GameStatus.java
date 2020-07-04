@@ -1,9 +1,9 @@
-package com.kimoji.kniffelig.model.game;
+package com.kimoji.kniffelig.model;
 
 /**
  * Interface for the game status model
  */
-public interface GameStatus{
+public interface GameStatus {
 
     /**
      * Return the current round number

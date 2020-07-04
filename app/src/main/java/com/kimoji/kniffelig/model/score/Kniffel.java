@@ -1,12 +1,12 @@
-package com.kimoji.kniffelig.model.game.score;
+package com.kimoji.kniffelig.model.score;
 
 import com.kimoji.kniffelig.controller.game.ScoreCalculator;
 
 import java.io.Serializable;
 
-public class Chance extends Score implements Serializable {
+public class Kniffel extends Score implements Serializable {
     @Override
     public int calculateScore(int[] diceValues) {
-        return ScoreCalculator.sumAll(diceValues);
+        return ScoreCalculator.calculateKniffel(diceValues);
     }
 }

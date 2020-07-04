@@ -1,7 +1,6 @@
 package com.kimoji.kniffelig.model;
 
 import com.kimoji.kniffelig.controller.game.ScoreType;
-import com.kimoji.kniffelig.model.game.Player;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
