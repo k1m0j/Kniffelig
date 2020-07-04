@@ -58,4 +58,6 @@ public interface Player {
     int getScoreValue(ScoreType scoreType);
 
     void setScores(Map<ScoreType, Score> scores);
+
+    int getUpperTotal();
 }

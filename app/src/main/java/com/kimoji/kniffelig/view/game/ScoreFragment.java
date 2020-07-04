@@ -25,6 +25,7 @@ public class ScoreFragment extends Fragment {
 
     private Playground playground;
 
+    //UPPER SCORES
     private Button btnAces;
     private Button btnTwos;
     private Button btnThrees;
@@ -32,6 +33,7 @@ public class ScoreFragment extends Fragment {
     private Button btnFives;
     private Button btnSixes;
 
+    //LOWER SCORES
     private Button btnTOAK;
     private Button btnFOAK;
     private Button btnFullhouse;
@@ -40,7 +42,19 @@ public class ScoreFragment extends Fragment {
     private Button btnKniffle;
     private Button btnChance;
 
+    //SCORE TEXT VIEWS
     private List<TextView> scoreTextViews = new ArrayList<>();
+
+    //UPPER TOTAL TEXT VIEWS
+    private List<TextView> upperTotal = new LinkedList<>();
+    private List<TextView> bonus = new LinkedList<>();
+    private List<TextView> upperTotalWithBonus = new LinkedList<>();
+
+    //PLAYER NAME TEXT VIEWS
+    private TextView playerOneName;
+    private TextView playerTwoName;
+    private TextView playerThreeName;
+    private TextView playerFourName;
 
     public ScoreFragment(Playground playground) {
         this.playground = playground;
@@ -146,19 +160,43 @@ public class ScoreFragment extends Fragment {
         scoreTextViews.add(view.findViewById(R.id.player_four_kniffel));
         scoreTextViews.add(view.findViewById(R.id.player_four_chance));
 
+        upperTotal.add(view.findViewById(R.id.player_one_upper_total));
+        upperTotal.add(view.findViewById(R.id.player_two_upper_total));
+        upperTotal.add(view.findViewById(R.id.player_three_upper_total));
+        upperTotal.add(view.findViewById(R.id.player_four_upper_total));
+
+        /*
+        playerOneName.findViewById(R.id.player_one_nameo);
+        playerOneName.setText(playground.getPlayerName(0));
+        playerTwoName.findViewById(R.id.player_two_name);
+        playerTwoName.setText(playground.getPlayerName(1));
+        playerThreeName.findViewById(R.id.player_three_name);
+        playerThreeName.setText(playground.getPlayerName(2));
+        playerFourName.findViewById(R.id.player_four_name);
+        playerFourName.setText(playground.getPlayerName(3));
+        */
         return view;
     }
 
     private void addScore(View v) {
         Button btn = (Button) v;
         playground.addScore(ScoreType.getScore(btn.getText().toString()));
-        setScores();
+
+        GameActivity gameActivity = (GameActivity) getActivity();
+        ShakerFragment shakerFragment = gameActivity.getShakerFragment();
+
+        shakerFragment.setAllDicesColorRed();
+        shakerFragment.updateView();
+        updateView();
     }
 
-    private void setScores() {
+    private void updateView() {
         List<Integer> scores = playground.getFirstThreeScores();
         for (int i = 0; i < scores.size(); i++) {
             scoreTextViews.get(i).setText(String.valueOf(scores.get(i)));
         }
+
+        // playground.getUpperScores();
     }
+
 }

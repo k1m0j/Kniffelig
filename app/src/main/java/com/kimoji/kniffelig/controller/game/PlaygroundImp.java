@@ -21,7 +21,7 @@ public class PlaygroundImp implements Playground {
 
 
     public PlaygroundImp(String[] playerNames) {
-        gameStatus = new GameStatusImp(0, 0, 3);
+        gameStatus = new GameStatusImp(0, 0, 2);
         Player[] newPlayers = new PlayerImp[playerNames.length];
         int index = 0;
         for (String name : playerNames) {
@@ -75,6 +75,11 @@ public class PlaygroundImp implements Playground {
             gameStatus.setCurrentRound(getCurrentRound() + 1);
             SHAKER.setAllFree();
             setNextPlayer();
+            try {
+                shake();
+            } catch (InvalidUserInteractionException e) {
+                e.printStackTrace();
+            }
         } else {
             //TODO END OF GAME
         }
@@ -107,6 +112,15 @@ public class PlaygroundImp implements Playground {
             allPlayers[i].getScores().forEach(score -> list.add(score.getValue()));
         }
         return list;
+    }
+
+    @Override
+    public String getPlayerName(int index) {
+        if (index >= allPlayers.length) {
+            return "";
+        } else {
+            return allPlayers[index].getName();
+        }
     }
 
 

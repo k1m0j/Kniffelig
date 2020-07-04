@@ -67,16 +67,28 @@ public class ShakerFragment extends Fragment {
         currentPlayer.setText((playground.getActivePlayerName()));
         shakesLeft.setText(String.valueOf(playground.getLeftTries()));
 
+        setImagesToDiceValue();
+
+        setAllDicesColorRed();
 
         return view;
+    }
+
+    public void setImagesToDiceValue() {
+        ArrayList<Integer> resources = getResourcesOwn(playground.getCurrentDiceValues());
+        ImageView[] images = {imageView1, imageView2, imageView3, imageView4, imageView5};
+        ArrayList<ImageView> imageViews = new ArrayList<>();
+        for (ImageView element : images) {
+            imageViews.add(element);
+        }
+        for (int i = 0; i < imageViews.size(); i++) {
+            images[i].setImageResource(resources.get(i));
+        }
     }
 
     public void onShakeButton(View view) {
         try {
             playground.shake();
-            shakesLeft.setText(String.valueOf(playground.getLeftTries()));
-            currentRound.setText(String.valueOf(playground.getCurrentRound()));
-            Log.i(TAG, "onClick: playground.shake aufgerufen.");
         } catch (InvalidUserInteractionException e) {
             e.printStackTrace();
         }
@@ -90,26 +102,20 @@ public class ShakerFragment extends Fragment {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-
-                int[] tempValues = playground.getCurrentDiceValues();
-                ArrayList ressources = getResourcesOwn(tempValues);
-                setImageResourcesOwn(ressources);
-                Log.i(TAG, "onAnimationEnd: Würfelwerte nach setImageView");
-                printValues();
-                Log.i("lukas", "onAnimationEnd aufgerufen");
+                setImagesToDiceValue();
             }
 
             @Override
             public void onAnimationRepeat(Animation animation) {
             }
         };
-
         anim.setAnimationListener(animationListener);
         ImageView[] images = {imageView1, imageView2, imageView3, imageView4, imageView5};
         //Animationsstart der Images
         for (int i = 0; i < images.length; i++) {
             images[i].startAnimation(anim);
         }
+        updateView();
     }
 
 
@@ -145,6 +151,14 @@ public class ShakerFragment extends Fragment {
         }
     }
 
+    public void setAllDicesColorRed() {
+        imageView1.setColorFilter(Color.RED);
+        imageView2.setColorFilter(Color.RED);
+        imageView3.setColorFilter(Color.RED);
+        imageView4.setColorFilter(Color.RED);
+        imageView5.setColorFilter(Color.RED);
+    }
+
 
     /**
      * Hilfmethode, um Würfelwerte in Konsole anzuzeigen
@@ -172,21 +186,14 @@ public class ShakerFragment extends Fragment {
         return temp;
     }
 
-    /**
-     * Verknüpft imageViews mit passendem Bild
-     *
-     * @param ressources IDs in ArrayList
-     */
-    private void setImageResourcesOwn(ArrayList<Integer> ressources) {
-        ImageView[] images = {imageView1, imageView2, imageView3, imageView4, imageView5};
-        ArrayList<ImageView> listImages = new ArrayList<>();
-
-        for (ImageView element : images) {
-            listImages.add(element);
-        }
-        for (int i = 0; i < listImages.size(); i++) {
-            images[i].setImageResource(ressources.get(i));
-        }
+    public TextView getCurrentPlayer() {
+        return currentPlayer;
     }
 
+    public void updateView() {
+        setImagesToDiceValue();
+        shakesLeft.setText(String.valueOf(playground.getLeftTries()));
+        currentRound.setText(String.valueOf(playground.getCurrentRound()));
+        currentPlayer.setText(playground.getActivePlayerName());
+    }
 }

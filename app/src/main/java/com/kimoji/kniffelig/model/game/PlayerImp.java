@@ -35,6 +35,7 @@ import static com.kimoji.kniffelig.controller.game.ScoreType.SMALL_STRAIGHT;
 import static com.kimoji.kniffelig.controller.game.ScoreType.THREES;
 import static com.kimoji.kniffelig.controller.game.ScoreType.THREE_OF_A_KIND;
 import static com.kimoji.kniffelig.controller.game.ScoreType.TWOS;
+import static java.lang.Enum.valueOf;
 
 public class PlayerImp implements Player, Serializable {
 
@@ -119,6 +120,18 @@ public class PlayerImp implements Player, Serializable {
     @Override
     public void setScores(Map<ScoreType, Score> scores) {
         this.scores = scores;
+    }
+
+    @Override
+    public int getUpperTotal() {
+        int total;
+        total = scores.get(ACES).getValue();
+        total = scores.get(TWOS).getValue();
+        total = scores.get(THREES).getValue();
+        total = scores.get(FOURS).getValue();
+        total = scores.get(FIVES).getValue();
+        total = scores.get(SIXES).getValue();
+        return total;
     }
 
 }

@@ -89,4 +89,7 @@ public interface Playground {
     boolean isLocked(int index);
 
     LinkedList<Integer> getFirstThreeScores();
+
+    String getPlayerName(int index);
+
 }

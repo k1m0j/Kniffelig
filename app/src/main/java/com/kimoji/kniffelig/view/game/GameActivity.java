@@ -15,17 +15,17 @@ import com.kimoji.kniffelig.model.game.Player;
 import com.kimoji.kniffelig.model.game.PlayerImp;
 
 
-public class
-GameActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
 
     private static final String TAG = "Gameactivity";
     private GameSectionAdapter sectionsPageAdapter;
 
     private ViewPager viewPager;
 
-    private Playground playground;
+    private ShakerFragment shakerFragment;
+    private ScoreFragment scoreFragment;
 
-    private Player player1, player2, player3, player4;
+    private Playground playground;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,35 +40,15 @@ GameActivity extends AppCompatActivity {
 
         //TODO Player Name
 
-
-        // PlayerImp testPlayer1 = new PlayerImp("Peter Lustig");
-        //  PlayerImp testPlayer2 = new PlayerImp("Daniel Düsentrieb");
-        //  PlayerImp testPlayer3 = new PlayerImp("Daisy Duck");
-        //  PlayerImp testPlayer4 = new PlayerImp("Zapzarap");
-
         final String sender = this.getIntent().getExtras().getString("SENDER_KEY");
 
         if (sender != null) {
             this.receiveData();
             Toast.makeText(this, "Received", Toast.LENGTH_SHORT).show();
-
         }
-
-
+        shakerFragment = new ShakerFragment(playground);
+        scoreFragment = new ScoreFragment(playground);
         setupViewPager();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        final String sender = this.getIntent().getExtras().getString("SENDER_KEY");
-
-        if (sender != null) {
-            this.receiveData();
-            Toast.makeText(this, "Received", Toast.LENGTH_SHORT).show();
-
-        }
     }
 
     private void receiveData() {
@@ -79,26 +59,23 @@ GameActivity extends AppCompatActivity {
         String nameThree = i.getStringExtra("PlayerThreeName");
         String nameFour = i.getStringExtra("PlayerFourName");
 
-        player1 = new PlayerImp(nameOne);
-        player2 = new PlayerImp(nameTwo);
-        player3 = new PlayerImp(nameThree);
-        player4 = new PlayerImp(nameFour);
-
-
-        String[] playerNames = {player1.getName(), player2.getName(), player3.getName(), player4.getName()};
+        String[] playerNames = {nameOne, nameTwo, nameThree, nameFour};
         playground = new PlaygroundImp(playerNames);
-
-
     }
 
     private void setupViewPager() {
         sectionsPageAdapter = new GameSectionAdapter(getSupportFragmentManager(), 0);
-        sectionsPageAdapter.addFragment(new ShakerFragment(playground), "Shaker");
-        sectionsPageAdapter.addFragment(new ScoreFragment(playground), "Score Board");
+        sectionsPageAdapter.addFragment(shakerFragment, "Shaker");
+        sectionsPageAdapter.addFragment(scoreFragment, "Score Board");
 
         viewPager.setAdapter(sectionsPageAdapter);
-
-
     }
 
+    public ShakerFragment getShakerFragment() {
+        return shakerFragment;
+    }
+
+    public ScoreFragment getScoreFragment() {
+        return scoreFragment;
+    }
 }

@@ -17,6 +17,9 @@ public class Shaker {
         for (Dice dice : dices) {
             dice.setValue(getNewDiceValue());
         }
+        System.out.println("fuck dich");
+        System.out.println(dices[0].getValue() + "lol" + dices[1].getValue() + "" + dices[2].getValue() + "" + dices[3].getValue() + "" + dices[4]
+                .getValue() + "");
     }
 
     public int getDiceArrayLength() {
