@@ -1,10 +1,6 @@
 package com.kimoji.kniffelig.view.lobby;
 
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
@@ -13,9 +9,7 @@ import androidx.test.runner.AndroidJUnit4;
 
 import com.kimoji.kniffelig.R;
 
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
-import org.hamcrest.TypeSafeMatcher;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,40 +41,23 @@ public class LobbyActivityNamingTest {
     //User wants to start app and insert names for different players
     @Test
     public void lobbyActivityNamingTest() {
-        ViewInteraction appCompatButton = onView(
-                allOf(withId(R.id.btn_local_lobby), withText("Local game"),
-
-                        isDisplayed()));
+        ViewInteraction appCompatButton = onView(allOf(withId(R.id.btn_local_lobby), withText("Local game"), isDisplayed()));
         appCompatButton.perform(click());
 
-        ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.player_one_name),
-
-                        isDisplayed()));
+        ViewInteraction appCompatEditText = onView(allOf(withId(R.id.player_one_name), isDisplayed()));
         appCompatEditText.perform(replaceText("a"), closeSoftKeyboard());
 
-        ViewInteraction appCompatEditText2 = onView(
-                allOf(withId(R.id.player_two_name),
-
-                        isDisplayed()));
+        ViewInteraction appCompatEditText2 = onView(allOf(withId(R.id.player_two_name), isDisplayed()));
         appCompatEditText2.perform(replaceText("b"), closeSoftKeyboard());
 
-        ViewInteraction appCompatEditText3 = onView(
-                allOf(withId(R.id.player_two_name), withText("b"),
-
-                        isDisplayed()));
+        ViewInteraction appCompatEditText3 = onView(allOf(withId(R.id.player_two_name), withText("b"), isDisplayed()));
         appCompatEditText3.perform(click());
 
-        ViewInteraction appCompatEditText4 = onView(
-                allOf(withId(R.id.player_two_name), withText("b"),
-
-                        isDisplayed()));
+        ViewInteraction appCompatEditText4 = onView(allOf(withId(R.id.player_two_name), withText("b"), isDisplayed()));
         appCompatEditText4.perform(click());
 
-        ViewInteraction appCompatEditText5 = onView(
-                allOf(withId(R.id.player_three_name),
-
-                        isDisplayed()));
+        ViewInteraction appCompatEditText5 = onView(allOf(withId(R.id.player_three_name),
+                isDisplayed()));
         appCompatEditText5.perform(replaceText("c"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText6 = onView(

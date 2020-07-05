@@ -1,6 +1,6 @@
 package com.kimoji.kniffelig.persistenz;
 
-import android.content.Context;
+
 import android.os.Environment;
 import android.util.Log;
 
@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class FilemanagerImp implements Filemanager {
+public class FilemanagerImp {
 
     private static final String TAG = "persistence";
 
@@ -25,8 +25,7 @@ public class FilemanagerImp implements Filemanager {
     }
 
 
-    @Override
-    public void saveGameStatus(Context context, GameStatus gameStatus) {
+    public void saveGameStatus(GameStatus gameStatus) {
         File outFile = new File(Environment.getExternalStorageDirectory(), "appSaveStateGameStatus.data");
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(outFile));
@@ -37,7 +36,6 @@ public class FilemanagerImp implements Filemanager {
         }
     }
 
-    @Override
     public GameStatus loadGameStatus() {
         try {
             File inFile = new File(Environment.getExternalStorageDirectory(), "appSaveStateGameStatus.data");
@@ -50,8 +48,7 @@ public class FilemanagerImp implements Filemanager {
         return null;
     }
 
-    @Override
-    public void savePlayers(Context context, Player[] allPlayers) {
+    public void savePlayers(Player[] allPlayers) {
         File outFile = new File(Environment.getExternalStorageDirectory(), "appSaveStatePlayers.data");
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(outFile));
@@ -62,7 +59,6 @@ public class FilemanagerImp implements Filemanager {
         }
     }
 
-    @Override
     public Player[] loadPlayers() {
         try {
             File inFile = new File(Environment.getExternalStorageDirectory(), "appSaveStatePlayers.data");
@@ -75,8 +71,7 @@ public class FilemanagerImp implements Filemanager {
         return null;
     }
 
-    @Override
-    public void saveShaker(Context context, Shaker shaker) {
+    public void saveShaker(Shaker shaker) {
         File outFile = new File(Environment.getExternalStorageDirectory(), "appSaveStateShaker.data");
         try {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(outFile));
@@ -87,7 +82,6 @@ public class FilemanagerImp implements Filemanager {
         }
     }
 
-    @Override
     public Shaker loadShaker() {
         try {
             File inFile = new File(Environment.getExternalStorageDirectory(), "appSaveStateShaker.data");

@@ -36,12 +36,13 @@ public class GameActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
+        Intent i = this.getIntent();
+        Bundle b = i.getExtras();
 
-        final String sender = this.getIntent().getExtras().getString("SENDER_KEY");
+        final String sender = b.getString("SENDER_KEY");
 
         if (sender != null) {
             this.receiveData();
-            Toast.makeText(this, "Received", Toast.LENGTH_SHORT).show();
         }
         shakerFragment = new ShakerFragment(playground);
         scoreFragment = new ScoreFragment(playground);

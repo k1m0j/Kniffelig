@@ -20,8 +20,9 @@ import androidx.fragment.app.Fragment;
 import com.kimoji.kniffelig.R;
 import com.kimoji.kniffelig.controller.game.Playground;
 import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
-import com.kimoji.kniffelig.persistenz.Filemanager;
-import com.kimoji.kniffelig.persistenz.FilemanagerImp;
+import com.kimoji.kniffelig.persistenz.FileManager;
+import com.kimoji.kniffelig.persistenz.FilemanagerDelegater;
+import com.kimoji.kniffelig.persistenz.ValueHolder;
 
 import java.util.ArrayList;
 
@@ -33,7 +34,7 @@ public class ShakerFragment extends Fragment {
     private TextView currentPlayer, currentRound, shakesLeft;
 
     private Playground playground;
-    private Filemanager filemanager;
+    private FileManager filemanager;
 
 
     //Log - Hilfe
@@ -79,7 +80,7 @@ public class ShakerFragment extends Fragment {
         currentPlayer.setText((playground.getActivePlayerName()));
         shakesLeft.setText(String.valueOf(playground.getLeftTries()));
 
-        filemanager = new FilemanagerImp();
+        filemanager = new FilemanagerDelegater();
 
         updateView();
 
@@ -170,23 +171,20 @@ public class ShakerFragment extends Fragment {
     }
 
     private void saveGame(View view) {
-        filemanager.saveGameStatus(getContext(), playground.getGameStatus());
-        filemanager.savePlayers(getContext(), playground.getAllPlayers());
-        filemanager.saveShaker(getContext(), playground.getShaker());
-
+        filemanager.saveGameState(playground.getGameStatus(), playground.getAllPlayers(), playground.getShaker());
     }
 
     private void loadGame(View view) {
-        playground.setGameStatus(filemanager.loadGameStatus());
-        playground.setAllPlayers(filemanager.loadPlayers());
-        playground.setShaker(filemanager.loadShaker());
+        ValueHolder valueHolder = filemanager.loadGameState();
+        playground.setGameStatus(valueHolder.getGameStatus());
+        playground.setAllPlayers(valueHolder.getPlayers());
+        playground.setShaker(valueHolder.getShaker());
 
         updateView();
         GameActivity reload = (GameActivity) getActivity();
         reload.getScoreFragment().updateView();
 
 
-        Log.i(TAG, "reloadedData:  currentRound: " + filemanager.loadGameStatus().getCurrentRound() + " leftTries: " + filemanager.loadGameStatus().getLeftTries() + " activePlayers" + filemanager.loadGameStatus().getActivePlayer());
     }
 
 
