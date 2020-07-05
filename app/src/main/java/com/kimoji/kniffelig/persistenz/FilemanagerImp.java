@@ -13,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
 public class FilemanagerImp {
@@ -31,6 +32,14 @@ public class FilemanagerImp {
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(outFile));
             saveGameStatus(oos, gameStatus);
             Log.i(TAG, "saveGameStatus: aufgerufen");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveGameStatus(ObjectOutput oos, GameStatus gameStatus) {
+        try {
+            oos.writeObject(gameStatus);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -105,18 +114,9 @@ public class FilemanagerImp {
         return null;
     }
 
-    public void saveShaker(ObjectOutputStream oos, Shaker shaker) {
+    public void saveShaker(ObjectOutput oos, Shaker shaker) {
         try {
             oos.writeObject(shaker);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    public void saveGameStatus(ObjectOutputStream oos, GameStatus gameStatus) {
-        try {
-            oos.writeObject(gameStatus);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -134,7 +134,7 @@ public class FilemanagerImp {
     }
 
 
-    public void savePlayers(ObjectOutputStream oos, Player[] allPlayers) {
+    public void savePlayers(ObjectOutput oos, Player[] allPlayers) {
         try {
             oos.writeObject(allPlayers);
         } catch (IOException e) {
@@ -153,6 +153,4 @@ public class FilemanagerImp {
         }
         return null;
     }
-
-
 }
