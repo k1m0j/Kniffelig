@@ -36,7 +36,7 @@ import static org.hamcrest.Matchers.is;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class LobbyActivityTestNeuHaha {
+public class GameplayIntegrationTest {
 
     @Rule
     public ActivityTestRule<LobbyActivity> mActivityTestRule = new ActivityTestRule<>(LobbyActivity.class);
@@ -47,7 +47,7 @@ public class LobbyActivityTestNeuHaha {
                     "android.permission.WRITE_EXTERNAL_STORAGE");
 
     @Test
-    public void lobbyActivityTestNeuHaha() {
+    public void gamePlayIntegrationTest() {
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.btn_local_lobby), withText("Local game"),
                         childAtPosition(

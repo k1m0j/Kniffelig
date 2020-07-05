@@ -33,7 +33,7 @@ import static org.hamcrest.Matchers.allOf;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class InsertNamesAndCheckValuesTest {
+public class NameInputTest {
 
     @Rule
     public ActivityTestRule<LobbyActivity> mActivityTestRule = new ActivityTestRule<>(LobbyActivity.class);

@@ -19,7 +19,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 public class NavigationTest {
 
     @Test
-    public void testFragmentNavigation() {
+    public void checkShakerFragmentExists() {
 
         //SETUP
         ActivityScenario<GameActivity> scenario = ActivityScenario.launch(GameActivity.class);
