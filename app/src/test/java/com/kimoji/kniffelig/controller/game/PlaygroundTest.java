@@ -18,7 +18,7 @@ class PlaygroundTest {
 
     @Test
     void shakeInitLeftTries() {
-        assertEquals(3, playground.getLeftTries());
+        assertEquals(2, playground.getLeftTries());
     }
 
     @Test
@@ -39,7 +39,7 @@ class PlaygroundTest {
         } catch (InvalidUserInteractionException e) {
             fail();
         }
-        assertEquals(2, playground.getLeftTries());
+        assertEquals(1, playground.getLeftTries());
     }
 
     @Test
@@ -50,13 +50,13 @@ class PlaygroundTest {
         } catch (InvalidUserInteractionException e) {
             fail();
         }
-        assertEquals(1, playground.getLeftTries());
+        assertEquals(0, playground.getLeftTries());
     }
 
     @Test
     public void shakeThreeShakes() {
         try {
-            playground.shake();
+            //First shake gets called with opening game / view
             playground.shake();
             playground.shake();
         } catch (InvalidUserInteractionException e) {
@@ -85,7 +85,7 @@ class PlaygroundTest {
             playground.shake();
             playground.shake();
         } catch (InvalidUserInteractionException e) {
-            fail();
+            //?
         }
         assertThrows(InvalidUserInteractionException.class, () -> playground.shake());
     }
@@ -93,7 +93,7 @@ class PlaygroundTest {
     @Test
     void lockDiceNoChangeOfTries() {
         playground.lockDice(1);
-        assertEquals(3, playground.getLeftTries());
+        assertEquals(2, playground.getLeftTries());
     }
 
     @Test
@@ -105,13 +105,13 @@ class PlaygroundTest {
     @Test
     void freeDice() {
         playground.unlockDice(1);
-        assertEquals(3, playground.getLeftTries());
+        assertEquals(2, playground.getLeftTries());
     }
 
     @Test
     void addScoreCurrentRound1() {
         playground.unlockDice(1);
-        assertEquals(3, playground.getLeftTries());
+        assertEquals(2, playground.getLeftTries());
     }
 
     @Test
@@ -124,7 +124,7 @@ class PlaygroundTest {
     void addScoreCurrentRound2() {
         playground.addScore(ScoreType.ACES);
         playground.addScore(ScoreType.TWOS);
-        assertEquals(2, playground.getCurrentRound());
+        assertEquals(0, playground.getCurrentRound());
     }
 
     @Test
@@ -139,7 +139,7 @@ class PlaygroundTest {
         playground.addScore(ScoreType.ACES);
         playground.addScore(ScoreType.TWOS);
         playground.addScore(ScoreType.FIVES);
-        assertEquals(3, playground.getCurrentRound());
+        assertEquals(1, playground.getCurrentRound());
     }
 
     @Test
@@ -158,7 +158,7 @@ class PlaygroundTest {
             fail();
         }
         playground.addScore(ScoreType.FULLHOUSE);
-        assertEquals(3, playground.getLeftTries());
+        assertEquals(2, playground.getLeftTries());
     }
 
     @Test
@@ -170,7 +170,7 @@ class PlaygroundTest {
             fail();
         }
         playground.addScore(ScoreType.FULLHOUSE);
-        assertEquals(3, playground.getLeftTries());
+        assertEquals(2, playground.getLeftTries());
     }
 
     @Test
@@ -188,7 +188,7 @@ class PlaygroundTest {
         playground.addScore(ScoreType.LARGE_STRAIGHT);
         playground.addScore(ScoreType.KNIFFEL);
         playground.addScore(ScoreType.CHANCE);
-        assertEquals(13, playground.getCurrentRound());
+        assertEquals(4, playground.getCurrentRound());
     }
 
     @Test
@@ -207,7 +207,7 @@ class PlaygroundTest {
         playground.addScore(ScoreType.KNIFFEL);
         playground.addScore(ScoreType.KNIFFEL);
         playground.addScore(ScoreType.CHANCE);
-        assertEquals(13, playground.getCurrentRound());
+        assertEquals(4, playground.getCurrentRound());
     }
 
     @Test

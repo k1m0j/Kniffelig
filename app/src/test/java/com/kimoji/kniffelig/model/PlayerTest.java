@@ -18,7 +18,7 @@ class PlayerTest {
     @BeforeEach
     void setUp() {
         scores = new int[]{-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-        // testPlayer = new PlayerImp("Peter Lustig", scores);
+        testPlayer = new PlayerImp("Peter Lustig");
 
 
     }

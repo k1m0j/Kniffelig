@@ -21,7 +21,9 @@ public class FilemanagerImp implements Filemanager {
 
 
     public FilemanagerImp() {
+
     }
+
 
     @Override
     public void saveGameStatus(Context context, GameStatus gameStatus) {
@@ -98,7 +100,7 @@ public class FilemanagerImp implements Filemanager {
         return null;
     }
 
-    private Shaker loadShaker(ObjectInputStream ois) {
+    public Shaker loadShaker(ObjectInputStream ois) {
         Shaker shaker;
         try {
             shaker = (Shaker) ois.readObject();
@@ -109,7 +111,7 @@ public class FilemanagerImp implements Filemanager {
         return null;
     }
 
-    private void saveShaker(ObjectOutputStream oos, Shaker shaker) {
+    public void saveShaker(ObjectOutputStream oos, Shaker shaker) {
         try {
             oos.writeObject(shaker);
         } catch (IOException e) {
@@ -118,7 +120,7 @@ public class FilemanagerImp implements Filemanager {
     }
 
 
-    private void saveGameStatus(ObjectOutputStream oos, GameStatus gameStatus) {
+    public void saveGameStatus(ObjectOutputStream oos, GameStatus gameStatus) {
         try {
             oos.writeObject(gameStatus);
         } catch (IOException e) {
@@ -126,8 +128,7 @@ public class FilemanagerImp implements Filemanager {
         }
     }
 
-
-    private GameStatus loadGameStatus(ObjectInputStream ois) {
+    public GameStatus loadGameStatus(ObjectInputStream ois) {
         GameStatus gameStatus;
         try {
             gameStatus = (GameStatus) ois.readObject();
@@ -139,7 +140,7 @@ public class FilemanagerImp implements Filemanager {
     }
 
 
-    private void savePlayers(ObjectOutputStream oos, Player[] allPlayers) {
+    public void savePlayers(ObjectOutputStream oos, Player[] allPlayers) {
         try {
             oos.writeObject(allPlayers);
         } catch (IOException e) {
@@ -148,7 +149,7 @@ public class FilemanagerImp implements Filemanager {
     }
 
 
-    private Player[] loadPlayers(ObjectInputStream ois) {
+    public Player[] loadPlayers(ObjectInputStream ois) {
         Player[] players;
         try {
             players = (Player[]) ois.readObject();
