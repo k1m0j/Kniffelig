@@ -315,7 +315,21 @@ class PlaygroundTest {
     @Test
     void getActivePlayer() {
         playground.getActivePlayer();
+    }
 
+    @Test
+    void addFilledScoreDoesNotSkipPlayer() {
+        playground.addScore(ScoreType.ACES);
+        playground.addScore(ScoreType.ACES);
+        playground.addScore(ScoreType.ACES);
+        playground.addScore(ScoreType.ACES);
+        assertEquals("Hans", playground.getActivePlayerName());
+        assertEquals(1, playground.getCurrentRound());
+        assertEquals(2, playground.getLeftTries());
+        playground.addScore(ScoreType.ACES);
+        assertEquals("Hans", playground.getActivePlayerName());
+        assertEquals(1, playground.getCurrentRound());
+        assertEquals(2, playground.getLeftTries());
     }
 
     @Test

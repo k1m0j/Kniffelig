@@ -70,14 +70,16 @@ public class PlaygroundImp implements Playground {
     public void addScore(ScoreType scoreType) {
         if (gameStatus.getCurrentRound() < ROUND_NUMBER) {
             try {
-                allPlayers[getActivePlayer()].addScore(scoreType, shaker.getValues());
-                gameStatus.setLeftTries(TRIES);
-                if (getActivePlayer() == allPlayers.length - 1) {
-                    gameStatus.setCurrentRound(getCurrentRound() + 1);
+                if (!allPlayers[getActivePlayer()].getScore(scoreType).isFilledIn()) {
+                    allPlayers[getActivePlayer()].addScore(scoreType, shaker.getValues());
+                    gameStatus.setLeftTries(TRIES);
+                    if (getActivePlayer() == allPlayers.length - 1) {
+                        gameStatus.setCurrentRound(getCurrentRound() + 1);
+                    }
+                    shaker.setAllFree();
+                    setNextPlayer();
+                    shake();
                 }
-                shaker.setAllFree();
-                setNextPlayer();
-                shake();
             } catch (InvalidUserInteractionException e) {
                 e.printStackTrace();
             }
