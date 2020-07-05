@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import androidx.fragment.app.testing.FragmentScenario;
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.filters.LargeTest;
@@ -63,6 +64,10 @@ public class LobbyActivityTest2 {
 
     @Test
     public void lobbyActivityTest2() {
+
+        ActivityScenario<GameActivity> scenario = ActivityScenario.launch(GameActivity.class);
+       //FragmentScenario fragmentScenario = FragmentScenario.launchInContainer();
+
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.btn_local_lobby), withText("Local game"),
 
