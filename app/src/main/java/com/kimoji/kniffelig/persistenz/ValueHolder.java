@@ -20,16 +20,8 @@ public class ValueHolder {
         return gameStatus;
     }
 
-    public void setGameStatus(GameStatus gameStatus) {
-        this.gameStatus = gameStatus;
-    }
-
     public Player[] getPlayers() {
         return players;
-    }
-
-    public void setPlayers(Player[] players) {
-        this.players = players;
     }
 
     public Shaker getShaker() {

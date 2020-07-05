@@ -54,17 +54,6 @@ public class LocalLobbyFragment extends Fragment {
         nameFour = playerFourName.getText();
 
 
-
-
-
-        /*
-        DataStorage storage = new DataStorage(this.getActivity(), getResources().getString(R.string.sharedPreferencesFile));
-        Editable nameOne = playerOneName.getText();
-        storage.newSharedPreference("player1", nameOne.toString());
-        */
-
-        //Player Konstruktor mit init werten?
-        //alles in eine methode? -> aufruf -> submit button für name?
         return view;
     }
 
