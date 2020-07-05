@@ -31,4 +31,8 @@ public abstract class Score implements Serializable {
             throw new IllegalArgumentException("int Array should only contain 5 values");
         }
     }
+
+    public boolean isFilledIn() {
+        return filledIn;
+    }
 }
