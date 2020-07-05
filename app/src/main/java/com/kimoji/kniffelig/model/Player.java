@@ -29,13 +29,6 @@ public interface Player {
      *
      * @return all scores
      */
-    Map<ScoreType, Score> getScoresMap();
-
-    /**
-     * Returning all the scores from this customer
-     *
-     * @return all scores
-     */
     LinkedList<Score> getScores();
 
     /**
@@ -47,21 +40,24 @@ public interface Player {
     Score getScore(ScoreType scoreType);
 
     /**
-     * Setting a specific score score to a given value
+     * returns upper total player score
      *
-     * @param scoreType   specific score
-     * @param actualScore new score value
+     * @return int
      */
-    void setScore(ScoreType scoreType, int actualScore);
-
-    //TODO
-    int getScoreValue(ScoreType scoreType);
-
-    void setScores(Map<ScoreType, Score> scores);
-
     int getUpperTotal();
 
+    /**
+     * adds score to player
+     *
+     * @param scoreType
+     * @param dicesValues
+     */
     void addScore(ScoreType scoreType, int[] dicesValues);
 
+    /**
+     * returns lower total player score
+     *
+     * @return int
+     */
     int getLowerTotal();
 }

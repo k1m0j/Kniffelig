@@ -20,8 +20,8 @@ import androidx.fragment.app.Fragment;
 import com.kimoji.kniffelig.R;
 import com.kimoji.kniffelig.controller.game.Playground;
 import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
-import com.kimoji.kniffelig.persistenz.FileManager;
-import com.kimoji.kniffelig.persistenz.FilemanagerDelegater;
+import com.kimoji.kniffelig.persistenz.DataStorageController;
+import com.kimoji.kniffelig.persistenz.DataStorageDelegater;
 import com.kimoji.kniffelig.persistenz.ValueHolder;
 
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ public class ShakerFragment extends Fragment {
     private TextView currentPlayer, currentRound, shakesLeft;
 
     private Playground playground;
-    private FileManager filemanager;
+    private DataStorageController filemanager;
 
 
     //Log - Hilfe
@@ -80,7 +80,7 @@ public class ShakerFragment extends Fragment {
         currentPlayer.setText((playground.getActivePlayerName()));
         shakesLeft.setText(String.valueOf(playground.getLeftTries()));
 
-        filemanager = new FilemanagerDelegater();
+        filemanager = new DataStorageDelegater();
 
         updateView();
 

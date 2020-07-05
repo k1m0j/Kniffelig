@@ -16,12 +16,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
-public class FilemanagerImp {
+public class DataStorageImp {
 
     private static final String TAG = "persistence";
 
 
-    public FilemanagerImp() {
+    public DataStorageImp() {
 
     }
 

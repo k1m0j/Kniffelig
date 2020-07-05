@@ -31,19 +31,19 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         viewPager = findViewById(R.id.view_pager);
-        // setupViewPager();
 
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
         Intent i = this.getIntent();
-        Bundle b = i.getExtras();
+        // Bundle b = i.getExtras();
 
-        final String sender = b.getString("SENDER_KEY");
+        //final String sender = b.getString("SENDER_KEY");
+        // if (sender != null) {
+        this.receiveData();
+        //}
 
-        if (sender != null) {
-            this.receiveData();
-        }
+
         shakerFragment = new ShakerFragment(playground);
         scoreFragment = new ScoreFragment(playground);
         setupViewPager();
@@ -58,6 +58,7 @@ public class GameActivity extends AppCompatActivity {
         String nameFour = i.getStringExtra("PlayerFourName");
 
         String[] playerNames = {nameOne, nameTwo, nameThree, nameFour};
+        playground = new PlaygroundImp(playerNames);
         playground = new PlaygroundImp(playerNames);
     }
 

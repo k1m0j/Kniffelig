@@ -33,7 +33,7 @@ import static org.hamcrest.Matchers.allOf;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class LobbyActivityTest {
+public class CheckIfDicesImagesExist {
 
     @Rule
     public ActivityTestRule<LobbyActivity> mActivityTestRule = new ActivityTestRule<>(LobbyActivity.class);
@@ -44,7 +44,7 @@ public class LobbyActivityTest {
                     "android.permission.WRITE_EXTERNAL_STORAGE");
 
     @Test
-    public void lobbyActivityTest() {
+    public void checkIfDicesImagesExist() {
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.btn_local_lobby), withText("Local game"),
 
@@ -61,7 +61,7 @@ public class LobbyActivityTest {
                 allOf(withId(R.id.player_two_name),
 
                         isDisplayed()));
-        appCompatEditText2.perform(click());
+        appCompatEditText2.perform(replaceText("b"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText3 = onView(
                 allOf(withId(R.id.player_three_name),
@@ -70,28 +70,15 @@ public class LobbyActivityTest {
         appCompatEditText3.perform(replaceText("c"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText4 = onView(
-                allOf(withId(R.id.player_two_name),
-
-                        isDisplayed()));
-        appCompatEditText4.perform(replaceText("b"), closeSoftKeyboard());
-
-        ViewInteraction appCompatEditText5 = onView(
                 allOf(withId(R.id.player_four_name),
 
                         isDisplayed()));
-        appCompatEditText5.perform(replaceText("d"), closeSoftKeyboard());
-
-        ViewInteraction appCompatEditText6 = onView(
-                allOf(withId(R.id.player_four_name), withText("d"),
-
-                        isDisplayed()));
-        appCompatEditText6.perform(click()).perform(closeSoftKeyboard());
+        appCompatEditText4.perform(replaceText("d"), closeSoftKeyboard());
 
         ViewInteraction appCompatButton2 = onView(
                 allOf(withId(R.id.btn_2players), withText("Start Game"),
 
                         isDisplayed()));
-
         appCompatButton2.perform(click());
 
         ViewInteraction appCompatImageButton = onView(
@@ -100,6 +87,17 @@ public class LobbyActivityTest {
                         isDisplayed()));
         appCompatImageButton.perform(click());
 
+        ViewInteraction imageView = onView(
+                allOf(withId(R.id.imageViewDice1),
+
+                        isDisplayed()));
+        imageView.check(matches(isDisplayed()));
+
+        ViewInteraction imageView2 = onView(
+                allOf(withId(R.id.imageViewDice1),
+
+                        isDisplayed()));
+        imageView2.check(matches(isDisplayed()));
     }
 
 

@@ -4,13 +4,13 @@ import com.kimoji.kniffelig.controller.game.Shaker;
 import com.kimoji.kniffelig.model.GameStatus;
 import com.kimoji.kniffelig.model.Player;
 
-public class FilemanagerDelegater implements FileManager {
+public class DataStorageDelegater implements DataStorageController {
 
-    FilemanagerImp fm;
+    DataStorageImp fm;
 
 
-    public FilemanagerDelegater() {
-        this.fm = new FilemanagerImp();
+    public DataStorageDelegater() {
+        this.fm = new DataStorageImp();
     }
 
     @Override

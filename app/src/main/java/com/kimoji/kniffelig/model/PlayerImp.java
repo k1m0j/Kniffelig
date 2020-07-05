@@ -77,25 +77,12 @@ public class PlayerImp implements Player, Serializable {
         this.name = name;
     }
 
-    @Override
-    public Map<ScoreType, Score> getScoresMap() {
-        return new HashMap<>(scores);
-    }
 
     @Override
     public Score getScore(ScoreType scoreType) {
         return scores.get(scoreType);
     }
 
-    @Override
-    public int getScoreValue(ScoreType scoreType) {
-        return scores.get(scoreType).getValue();
-    }
-
-    @Override
-    public void setScore(ScoreType scoreType, int actualScore) {
-        scores.get(scoreType).setValue(actualScore);
-    }
 
     @Override
     public LinkedList<Score> getScores() {
@@ -116,10 +103,6 @@ public class PlayerImp implements Player, Serializable {
         return list;
     }
 
-    @Override
-    public void setScores(Map<ScoreType, Score> scores) {
-        this.scores = scores;
-    }
 
     @Override
     public void addScore(ScoreType scoreType, int[] dicesValues) {

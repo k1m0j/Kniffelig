@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import androidx.test.core.app.ActivityScenario;
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
@@ -13,6 +14,7 @@ import androidx.test.runner.AndroidJUnit4;
 
 import com.kimoji.kniffelig.R;
 import com.kimoji.kniffelig.view.game.GameActivity;
+import com.kimoji.kniffelig.view.game.ShakerFragment;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -43,19 +45,15 @@ public class LobbyActivityTest2 {
 
     @Rule
 
+
     public ActivityTestRule<LobbyActivity> mActivityTestRule = new ActivityTestRule<>(LobbyActivity.class);
-    private GameActivity gameActivity;
-   // public ActivityTestRule<GameActivity> activityActivityTestRule = new ActivityTestRule<>(GameActivity.class);
-
-
-
 
 
     @Before
     public void setActivity() {
-        gameActivity =  gameActivity;
-    }
+        ActivityScenario<GameActivity> scenario = ActivityScenario.launch(GameActivity.class);
 
+    }
 
 
     @Rule
@@ -271,22 +269,5 @@ public class LobbyActivityTest2 {
         tabView8.perform(click());
     }
 
-    private static Matcher<View> childAtPosition(
-            final Matcher<View> parentMatcher, final int position) {
 
-        return new TypeSafeMatcher<View>() {
-            @Override
-            public void describeTo(Description description) {
-                description.appendText("Child at position " + position + " in parent ");
-                parentMatcher.describeTo(description);
-            }
-
-            @Override
-            public boolean matchesSafely(View view) {
-                ViewParent parent = view.getParent();
-                return parent instanceof ViewGroup && parentMatcher.matches(parent)
-                        && view.equals(((ViewGroup) parent).getChildAt(position));
-            }
-        };
-    }
 }

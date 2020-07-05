@@ -89,8 +89,36 @@ public interface Playground {
      */
     boolean isLocked(int index);
 
+    /**
+     * returns all existing scores for all players
+     * involved in game as linked list starting
+     * with all scores for first player
+     *
+     * @return linked List with all scores
+     */
+
     LinkedList<Integer> getScores();
 
+    /**
+     * returns upperTotals from all existing players stored in
+     * a linked list
+     *
+     * @return linkedList with upper totals as integers
+     */
+    LinkedList<Integer> getUpperTotals();
+
+    /**
+     * returns lowerTotals from all existing players stored in
+     * a linked list
+     *
+     * @return linkedList with lower totals as integers
+     */
+    LinkedList<Integer> getLowerTotals();
+
+    /**
+     * @param index
+     * @return
+     */
     String getPlayerName(int index);
 
     /**
@@ -128,10 +156,11 @@ public interface Playground {
      */
     Shaker getShaker();
 
+
+    /**
+     * @param shaker
+     */
     void setShaker(Shaker shaker);
 
-    LinkedList<Integer> getUpperTotals();
-
-    LinkedList<Integer> getLowerTotals();
 
 }

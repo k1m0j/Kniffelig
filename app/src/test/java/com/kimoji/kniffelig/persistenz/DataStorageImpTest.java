@@ -11,16 +11,13 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.ObjectOutput;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyByte;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-class FilemanagerImpTest {
+class DataStorageImpTest {
 
     @BeforeEach
     void setUp() {
@@ -29,7 +26,7 @@ class FilemanagerImpTest {
     @Test
     void saveGameStatusInteraction() {
         ObjectOutput oosMock = mock(ObjectOutput.class);
-        FilemanagerImp fm = new FilemanagerImp();
+        DataStorageImp fm = new DataStorageImp();
         GameStatus gameStatus = new GameStatusImp(1, 2, 3);
 
         fm.saveGameStatus(oosMock, gameStatus);
@@ -45,7 +42,7 @@ class FilemanagerImpTest {
     @Test
     void saveAndLoadGameStatusValues() {
         GameStatus gameStatus = new GameStatusImp(1, 2, 3);
-        FilemanagerImp fm = new FilemanagerImp();
+        DataStorageImp fm = new DataStorageImp();
 
         fm.saveGameStatus(gameStatus);
         GameStatus loadedStatus = fm.loadGameStatus();
@@ -61,7 +58,7 @@ class FilemanagerImpTest {
     void savePlayersInteraction() {
 
         ObjectOutput oosMock = mock(ObjectOutput.class);
-        FilemanagerImp fm = new FilemanagerImp();
+        DataStorageImp fm = new DataStorageImp();
         Player[] players = {new PlayerImp("Hans"), new PlayerImp("Beate"), new PlayerImp("Thomas")};
 
         fm.savePlayers(oosMock, players);
@@ -78,7 +75,7 @@ class FilemanagerImpTest {
     void saveAndLoadPlayersValues() {
 
 
-        FilemanagerImp fm = new FilemanagerImp();
+        DataStorageImp fm = new DataStorageImp();
         Player[] players = {new PlayerImp("Hans"), new PlayerImp("Beate"), new PlayerImp("Thomas")};
         fm.savePlayers(players);
         Player[] reloadedPlayers = fm.loadPlayers();
@@ -94,7 +91,7 @@ class FilemanagerImpTest {
     void saveShakerInteraction() {
 
         ObjectOutput oosMock = mock(ObjectOutput.class);
-        FilemanagerImp fm = new FilemanagerImp();
+        DataStorageImp fm = new DataStorageImp();
         Shaker shaker = new Shaker();
 
         fm.saveShaker(oosMock, shaker);
@@ -114,7 +111,7 @@ class FilemanagerImpTest {
 
         int[] expectedValues = shaker.getValues();
 
-        FilemanagerImp fm = new FilemanagerImp();
+        DataStorageImp fm = new DataStorageImp();
 
         fm.saveShaker(shaker);
         Shaker reloadedShaker = fm.loadShaker();
@@ -131,7 +128,7 @@ class FilemanagerImpTest {
         shaker.lockDice(1);
 
 
-        FilemanagerImp fm = new FilemanagerImp();
+        DataStorageImp fm = new DataStorageImp();
 
         fm.saveShaker(shaker);
         Shaker reloadedShaker = fm.loadShaker();
