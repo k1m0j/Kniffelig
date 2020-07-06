@@ -24,14 +24,6 @@ public abstract class Score implements Serializable {
         this.value = value;
     }
 
-
-    //TODO replace or jactor them
-    private void checkArrayLength(int[] dices) throws IllegalArgumentException {
-        if (dices.length != 5) {
-            throw new IllegalArgumentException("int Array should only contain 5 values");
-        }
-    }
-
     public boolean isFilledIn() {
         return filledIn;
     }
