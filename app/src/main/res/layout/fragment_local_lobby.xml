@@ -1,40 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/player_one_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:text="Player 1"></TextView>
 
     <EditText
         android:id="@+id/player_one_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="30dp"
         android:hint="insert name"></EditText>
+
+    <TextView
+        android:id="@+id/player_two_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:text="Player 2"></TextView>
 
     <EditText
         android:id="@+id/player_two_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="180dp"
+        android:layout_marginBottom="30dp"
         android:hint="insert name"></EditText>
 
+    <TextView
+        android:id="@+id/player_three_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:text="Player 3"></TextView>
 
     <EditText
         android:id="@+id/player_three_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="280dp"
+        android:layout_marginBottom="30dp"
         android:hint="insert name"></EditText>
+
+    <TextView
+        android:id="@+id/player_four_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:text="Player 4"></TextView>
 
     <EditText
         android:id="@+id/player_four_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="380dp"
+        android:layout_marginBottom="30dp"
         android:hint="insert name"></EditText>
 
     <Button
@@ -42,50 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="480dp"
         android:onClick="openPlayingInterface"
         android:text="Start Game"></Button>
 
-    <EditText
-        android:id="@+id/editTextTextPersonName1"
-        android:layout_width="77dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:enabled="false"
-        android:text="Player 1: " />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="77dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:ems="10"
-        android:enabled="false"
-        android:text="Player 2: " />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="77dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="240dp"
-        android:ems="10"
-        android:enabled="false"
-        android:text="Player 3: " />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="77dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
-        android:ems="10"
-        android:enabled="false"
-        android:text="Player 4: " />
-
-
-</RelativeLayout>
+</LinearLayout>

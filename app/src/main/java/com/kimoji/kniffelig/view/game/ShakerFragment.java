@@ -38,7 +38,7 @@ public class ShakerFragment extends Fragment {
     private TextView currentPlayer, currentRound, shakesLeft;
 
     private Playground playground;
-    private DataStorageController filemanager;
+    private DataStorageController dataStorageController;
 
     private SensorManager sensorManager;
     private Sensor accelerometer;
@@ -88,7 +88,7 @@ public class ShakerFragment extends Fragment {
         currentPlayer.setText((playground.getActivePlayerName()));
         shakesLeft.setText(String.valueOf(playground.getLeftTries()));
 
-        filemanager = new DataStorageDelegate();
+        dataStorageController = new DataStorageDelegate();
 
         initShakeSensor();
 
@@ -195,11 +195,11 @@ public class ShakerFragment extends Fragment {
     }
 
     private void saveGame(View view) {
-        filemanager.saveGameState(playground.getGameStatus(), playground.getAllPlayers(), playground.getShaker());
+        dataStorageController.saveGameState(playground.getGameStatus(), playground.getAllPlayers(), playground.getShaker());
     }
 
     private void loadGame(View view) {
-        ValueHolder valueHolder = filemanager.loadGameState();
+        ValueHolder valueHolder = dataStorageController.loadGameState();
         playground.setGameStatus(valueHolder.getGameStatus());
         playground.setAllPlayers(valueHolder.getPlayers());
         playground.setShaker(valueHolder.getShaker());
