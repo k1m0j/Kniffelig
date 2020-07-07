@@ -84,23 +84,20 @@ public class CheckMainGameComponentsDisplayedTest {
         appCompatEditText5.perform(replaceText("d"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText6 = onView(
-                allOf(withId(R.id.player_four_name), withText("d"),
+                allOf(withId(R.id.player_four_name), withText("d"), isDisplayed()));
 
-                        isDisplayed()));
         appCompatEditText6.perform(click()).perform(closeSoftKeyboard());
 
-        ViewInteraction appCompatButton2 = onView(
-                allOf(withId(R.id.btn_2players), withText("Start Game"),
+        ViewInteraction startGameButton = onView(
+                allOf(withId(R.id.btn_2players), withText("Start Game"), isDisplayed()));
+        startGameButton.perform(click());
 
-                        isDisplayed()));
 
-        appCompatButton2.perform(click());
-
-        ViewInteraction appCompatImageButton = onView(
-                allOf(withId(R.id.shake_Button),
-
-                        isDisplayed()));
+        //shake
+        ViewInteraction appCompatImageButton = onView(allOf(withId(R.id.shake_Button),
+                isDisplayed()));
         appCompatImageButton.perform(click());
+
 
     }
 

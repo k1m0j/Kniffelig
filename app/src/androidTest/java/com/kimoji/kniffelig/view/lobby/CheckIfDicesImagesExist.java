@@ -25,6 +25,7 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isClickable;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withParent;
@@ -43,61 +44,49 @@ public class CheckIfDicesImagesExist {
             GrantPermissionRule.grant(
                     "android.permission.WRITE_EXTERNAL_STORAGE");
 
+
+    //checks if images exists in shakerFragment, also checks setting playernames in activity before
     @Test
     public void checkIfDicesImagesExist() {
-        ViewInteraction appCompatButton = onView(
-                allOf(withId(R.id.btn_local_lobby), withText("Local game"),
-
-                        isDisplayed()));
+        ViewInteraction appCompatButton = onView(allOf(withId(R.id.btn_local_lobby), withText("Local game"), isDisplayed()));
         appCompatButton.perform(click());
 
-        ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.player_one_name),
+        //Input names
+        ViewInteraction inputPlayerOneName = onView(allOf(withId(R.id.player_one_name), isDisplayed()));
+        inputPlayerOneName.perform(replaceText("a"), closeSoftKeyboard());
 
-                        isDisplayed()));
-        appCompatEditText.perform(replaceText("a"), closeSoftKeyboard());
+        ViewInteraction inputPlayerTwoName = onView(allOf(withId(R.id.player_two_name), isDisplayed()));
+        inputPlayerTwoName.perform(replaceText("b"), closeSoftKeyboard());
 
-        ViewInteraction appCompatEditText2 = onView(
-                allOf(withId(R.id.player_two_name),
+        ViewInteraction inputPlayerThreeName = onView(allOf(withId(R.id.player_three_name), isDisplayed()));
+        inputPlayerThreeName.perform(replaceText("c"), closeSoftKeyboard());
 
-                        isDisplayed()));
-        appCompatEditText2.perform(replaceText("b"), closeSoftKeyboard());
+        ViewInteraction inputPlayerFourName = onView(allOf(withId(R.id.player_four_name), isDisplayed()));
+        inputPlayerFourName.perform(replaceText("d"), closeSoftKeyboard());
 
-        ViewInteraction appCompatEditText3 = onView(
-                allOf(withId(R.id.player_three_name),
+        ViewInteraction startGame = onView(allOf(withId(R.id.btn_2players), withText("Start Game"), isDisplayed()));
+        startGame.perform(click());
 
-                        isDisplayed()));
-        appCompatEditText3.perform(replaceText("c"), closeSoftKeyboard());
+        ViewInteraction appCompatImageButton = onView(allOf(withId(R.id.shake_Button), isDisplayed()));
 
-        ViewInteraction appCompatEditText4 = onView(
-                allOf(withId(R.id.player_four_name),
-
-                        isDisplayed()));
-        appCompatEditText4.perform(replaceText("d"), closeSoftKeyboard());
-
-        ViewInteraction appCompatButton2 = onView(
-                allOf(withId(R.id.btn_2players), withText("Start Game"),
-
-                        isDisplayed()));
-        appCompatButton2.perform(click());
-
-        ViewInteraction appCompatImageButton = onView(
-                allOf(withId(R.id.shake_Button),
-
-                        isDisplayed()));
+        //shake interaction
         appCompatImageButton.perform(click());
 
-        ViewInteraction imageView = onView(
-                allOf(withId(R.id.imageViewDice1),
 
-                        isDisplayed()));
-        imageView.check(matches(isDisplayed()));
+        onView(withId(R.id.imageViewDice1)).check(matches(isDisplayed()));
+        onView(withId(R.id.imageViewDice2)).check(matches(isDisplayed()));
+        onView(withId(R.id.imageViewDice3)).check(matches(isDisplayed()));
+        onView(withId(R.id.imageViewDice4)).check(matches(isDisplayed()));
+        onView(withId(R.id.imageViewDice5)).check(matches(isDisplayed()));
 
-        ViewInteraction imageView2 = onView(
-                allOf(withId(R.id.imageViewDice1),
 
-                        isDisplayed()));
-        imageView2.check(matches(isDisplayed()));
+        onView(withId(R.id.imageViewDice1)).check(matches(isClickable()));
+        onView(withId(R.id.imageViewDice2)).check(matches(isClickable()));
+        onView(withId(R.id.imageViewDice3)).check(matches(isClickable()));
+        onView(withId(R.id.imageViewDice4)).check(matches(isClickable()));
+        onView(withId(R.id.imageViewDice5)).check(matches(isClickable()));
+
+
     }
 
 
