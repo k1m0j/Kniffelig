@@ -1,6 +1,9 @@
 package com.kimoji.kniffelig.view.game;
 
+import android.content.Context;
 import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +22,7 @@ import androidx.fragment.app.Fragment;
 
 import com.kimoji.kniffelig.R;
 import com.kimoji.kniffelig.controller.game.Playground;
+import com.kimoji.kniffelig.controller.sensor.ShakeSensor;
 import com.kimoji.kniffelig.exception.InvalidUserInteractionException;
 import com.kimoji.kniffelig.persistenz.DataStorageController;
 import com.kimoji.kniffelig.persistenz.DataStorageDelegater;
@@ -35,6 +39,10 @@ public class ShakerFragment extends Fragment {
 
     private Playground playground;
     private DataStorageController filemanager;
+
+    private SensorManager sensorManager;
+    private Sensor accelerometer;
+    private ShakeSensor shakeDetector;
 
 
     //Log - Hilfe
@@ -82,11 +90,27 @@ public class ShakerFragment extends Fragment {
 
         filemanager = new DataStorageDelegater();
 
+        initShakeSensor();
+
         updateView();
 
         setAllDicesColorRed();
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Add the following line to register the Session Manager Listener onResume
+        sensorManager.registerListener(shakeDetector, accelerometer, SensorManager.SENSOR_DELAY_UI);
+    }
+
+    @Override
+    public void onPause() {
+        // Add the following line to unregister the Sensor Manager onPause
+        sensorManager.unregisterListener(shakeDetector);
+        super.onPause();
     }
 
 
@@ -183,8 +207,6 @@ public class ShakerFragment extends Fragment {
         updateView();
         GameActivity reload = (GameActivity) getActivity();
         reload.getScoreFragment().updateView();
-
-
     }
 
 
@@ -223,5 +245,15 @@ public class ShakerFragment extends Fragment {
             playground.unlockDice(i);
             imageView.setColorFilter(Color.RED);
         }
+    }
+
+    private void initShakeSensor() {
+        sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
+        accelerometer = sensorManager
+                .getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        shakeDetector = new ShakeSensor();
+        shakeDetector.setOnShakeListener(count -> {
+            onShakeButton(getView());
+        });
     }
 }

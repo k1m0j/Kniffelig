@@ -1,8 +1,10 @@
 package com.kimoji.kniffelig.view.game;
 
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -11,6 +13,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.kimoji.kniffelig.R;
 import com.kimoji.kniffelig.controller.game.Playground;
 import com.kimoji.kniffelig.controller.game.PlaygroundImp;
+import com.kimoji.kniffelig.controller.sensor.ShakeSensor;
 
 
 public class GameActivity extends AppCompatActivity {
@@ -36,12 +39,8 @@ public class GameActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         Intent i = this.getIntent();
-        // Bundle b = i.getExtras();
 
-        //final String sender = b.getString("SENDER_KEY");
-        // if (sender != null) {
         this.receiveData();
-        //}
 
 
         shakerFragment = new ShakerFragment(playground);
