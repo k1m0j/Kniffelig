@@ -47,96 +47,67 @@ public class SetScoreTest {
     @Test
     public void setScoreTest() {
         ViewInteraction appCompatButton = onView(allOf(withId(R.id.btn_local_lobby), withText("Local game"),
-                childAtPosition(withParent(withId(R.id.viewPager)), 0), isDisplayed()));
+                isDisplayed()));
         appCompatButton.perform(click());
 
         ViewInteraction appCompatEditText = onView(allOf(withId(R.id.player_one_name),
-                childAtPosition(withParent(withId(R.id.viewPager)), 0), isDisplayed()));
+                isDisplayed()));
 
         appCompatEditText.perform(replaceText("Graeber"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText2 = onView(allOf(withId(R.id.player_two_name),
-                childAtPosition(withParent(withId(R.id.viewPager)), 1), isDisplayed()));
+                isDisplayed()));
         appCompatEditText2.perform(replaceText("Wright"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText3 = onView(allOf(withId(R.id.player_three_name),
-                childAtPosition(withParent(withId(R.id.viewPager)), 2), isDisplayed()));
+                isDisplayed()));
 
         appCompatEditText3.perform(replaceText("Lanier"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText4 = onView(allOf(withId(R.id.player_four_name),
-                childAtPosition(withParent(withId(R.id.viewPager)), 3), isDisplayed()));
+                isDisplayed()));
 
         appCompatEditText4.perform(replaceText("Zuboff"), closeSoftKeyboard());
 
 
         ViewInteraction appCompatButton2 = onView(allOf(withId(R.id.btn_2players), withText("Start Game"),
-                childAtPosition(withParent(withId(R.id.viewPager)), 4), isDisplayed()));
+                isDisplayed()));
         appCompatButton2.perform(click());
 
-        ViewInteraction appCompatImageButton = onView(allOf(withId(R.id.shake_Button), childAtPosition(
-                allOf(withId(R.id.shaker_fragment), withParent(withId(R.id.view_pager))), 8),
+        ViewInteraction appCompatImageButton = onView(allOf(withId(R.id.shake_Button),
                 isDisplayed()));
         appCompatImageButton.perform(click());
 
 
         //Swipe left and right
-        ViewInteraction tabView = onView(allOf(withContentDescription("Score Board"), childAtPosition(childAtPosition(withId(R.id.tabs),
-                0),
-                1),
+        ViewInteraction tabView = onView(allOf(withContentDescription("Score Board"),
                 isDisplayed()));
         tabView.perform(click());
 
-        ViewInteraction tabView2 = onView(allOf(withContentDescription("Shaker"), childAtPosition(
-                childAtPosition(withId(R.id.tabs), 0), 0),
+        ViewInteraction tabView2 = onView(allOf(withContentDescription("Shaker"),
                 isDisplayed()));
         tabView2.perform(click());
 
         //check score board fragment
         ViewInteraction tabView3 = onView(allOf(withContentDescription("Score Board"),
-                childAtPosition(childAtPosition(withId(R.id.tabs), 0), 1),
+
                 isDisplayed()));
         tabView3.perform(click());
 
-        ViewInteraction appCompatButton3 = onView(allOf(withId(R.id.btn_sixes), withText("Sixes"),
-                childAtPosition(childAtPosition(withClassName(is("android.widget.TableLayout")),
-                        6),
-                        0)));
+        ViewInteraction appCompatButton3 = onView(allOf(withId(R.id.btn_sixes), withText("Sixes")
+        ));
         appCompatButton3.perform(scrollTo(), click());
 
-        ViewInteraction tabView4 = onView(allOf(withContentDescription("Shaker"), childAtPosition(
-                childAtPosition(withId(R.id.tabs), 0), 0),
+        ViewInteraction tabView4 = onView(allOf(withContentDescription("Shaker"),
                 isDisplayed()));
         tabView4.perform(click());
 
         ViewInteraction appCompatImageButton2 = onView(allOf(withId(R.id.shake_Button),
-                childAtPosition(allOf(withId(R.id.shaker_fragment), withParent(withId(R.id.view_pager))),
-                        8),
                 isDisplayed()));
         appCompatImageButton2.perform(click());
 
-        ViewInteraction appCompatImageButton3 = onView(allOf(withId(R.id.shake_Button), childAtPosition(allOf(withId(R.id.shaker_fragment), withParent(withId(R.id.view_pager))),
-                8),
+        ViewInteraction appCompatImageButton3 = onView(allOf(withId(R.id.shake_Button),
                 isDisplayed()));
         appCompatImageButton3.perform(click());
-    }
-
-    private static Matcher<View> childAtPosition(
-            final Matcher<View> parentMatcher, final int position) {
-
-        return new TypeSafeMatcher<View>() {
-            @Override
-            public void describeTo(Description description) {
-                description.appendText("Child at position " + position + " in parent ");
-                parentMatcher.describeTo(description);
-            }
-
-            @Override
-            public boolean matchesSafely(View view) {
-                ViewParent parent = view.getParent();
-                return parent instanceof ViewGroup && parentMatcher.matches(parent)
-                        && view.equals(((ViewGroup) parent).getChildAt(position));
-            }
-        };
     }
 }

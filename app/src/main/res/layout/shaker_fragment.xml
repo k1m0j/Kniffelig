@@ -1,185 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/shaker_fragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/shakes_left_description"
+    <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="60dp"
-        android:text="Left Shakes:"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:scrollbars="vertical"
+        android:gravity="center"
+        android:stretchColumns="0,1,2">
 
-    <TextView
-        android:id="@+id/current_Round_description"
+        <TableRow>
+
+            <TextView
+                android:id="@+id/current_Player_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current Player:"
+                android:gravity="center"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/current_Round_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Current round:"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/shakes_left_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Left Shakes:"
+                android:textStyle="bold"></TextView>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/current_Player"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Current Player"></TextView>
+
+            <TextView
+                android:id="@+id/current_Round"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Current round"></TextView>
+
+            <TextView
+                android:id="@+id/shakes_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Left Shakes"></TextView>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Current round:"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/shakes_left_description"
-        app:layout_constraintStart_toEndOf="@+id/current_Player_description"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp">
 
-    <TextView
-        android:id="@+id/current_Player_description"
+        <TableRow>
+
+            <ImageView
+                android:id="@+id/imageViewDice1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:src="@drawable/dice1" />
+
+            <ImageView
+                android:id="@+id/imageViewDice2"
+                android:layout_width="80dp"
+                android:layout_margin="10dp"
+                android:layout_height="80dp"
+                android:clickable="true"
+                android:src="@drawable/dice2" />
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:id="@+id/imageViewDice3"
+                android:layout_margin="10dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:clickable="true"
+                android:src="@drawable/dice3" />
+
+            <ImageView
+                android:id="@+id/imageViewDice4"
+                android:layout_margin="10dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:clickable="true"
+                android:src="@drawable/dice4"></ImageView>
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:id="@+id/imageViewDice5"
+                android:layout_margin="10dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:clickable="true"
+                android:src="@drawable/dice5" />
+        </TableRow>
+    </TableLayout>
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="12dp"
-        android:text="Current Player:"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/imageViewDice1"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:clickable="true"
-        android:src="@drawable/dice1"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewDice4"
-        app:layout_constraintEnd_toStartOf="@+id/imageViewDice2"
-        app:layout_constraintHorizontal_bias="0.386"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        <Button
+            android:id="@+id/save"
+            android:layout_width="62dp"
+            android:layout_height="36dp"
+            android:text="Save"></Button>
 
-    <ImageView
-        android:id="@+id/imageViewDice2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="44dp"
-        android:clickable="true"
-        android:src="@drawable/dice2"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewDice5"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewDice3"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="@+id/imageViewDice5" />
+        <ImageButton
+            android:id="@+id/shake_Button"
+            style="@android:style/Widget.ImageButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/dice"></ImageButton>
 
-    <ImageView
-        android:id="@+id/imageViewDice3"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="356dp"
-        android:clickable="true"
-        android:src="@drawable/dice3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toEndOf="@+id/imageViewDice5"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewDice2"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/imageViewDice4"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginBottom="84dp"
-        android:clickable="true"
-        android:src="@drawable/dice4"
-        app:layout_constraintBottom_toTopOf="@+id/shake_Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageViewDice5"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:clickable="true"
-        android:src="@drawable/dice5"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewDice4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewDice1"
-        app:layout_constraintVertical_bias="0.287" />
-
-    <ImageButton
-        android:id="@+id/shake_Button"
-        style="@android:style/Widget.ImageButton"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/dice" />
-
-    <TextView
-        android:id="@+id/current_Player"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:text="Current Player"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewDice1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/current_Player_description"
-        app:layout_constraintVertical_bias="0.08" />
-
-    <TextView
-        android:id="@+id/current_Round"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Current round"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewDice2"
-        app:layout_constraintEnd_toStartOf="@+id/shakes_left"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toEndOf="@+id/current_Player"
-        app:layout_constraintTop_toBottomOf="@+id/current_Round_description"
-        app:layout_constraintVertical_bias="0.088" />
-
-    <TextView
-        android:id="@+id/shakes_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:text="Left Shakes"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewDice3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shakes_left_description"
-        app:layout_constraintVertical_bias="0.057" />
-
-    <Button
-        android:id="@+id/save"
-        android:layout_width="62dp"
-        android:layout_height="36dp"
-        android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/shake_Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewDice4" />
-
-    <Button
-        android:id="@+id/load"
-        android:layout_width="62dp"
-        android:layout_height="36dp"
-        android:text="Load"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toEndOf="@+id/shake_Button"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewDice4" />
+        <Button
+            android:id="@+id/load"
+            android:layout_width="62dp"
+            android:layout_height="36dp"
+            android:text="Load"></Button>
+    </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

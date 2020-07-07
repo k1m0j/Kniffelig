@@ -62,12 +62,6 @@ public class NameInputTest {
         ViewInteraction appCompatEditText6 = onView(allOf(withId(R.id.player_four_name), isDisplayed()));
         appCompatEditText6.perform(replaceText("d"), closeSoftKeyboard());
 
-        ViewInteraction editText = onView(allOf(withId(R.id.editTextTextPersonName1), withText("Player 1: "), isDisplayed()));
-        editText.check(matches(withText("Player 1: ")));
-
-        ViewInteraction editText2 = onView(allOf(withId(R.id.editTextTextPersonName1), withText("Player 1: "), isDisplayed()));
-        editText2.check(matches(isDisplayed()));
-
         ViewInteraction editText3 = onView(allOf(withId(R.id.player_one_name), withText("a"), isDisplayed()));
         editText3.check(matches(isDisplayed()));
 
