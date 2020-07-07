@@ -1,10 +1,11 @@
-package com.kimoji.kniffelig.view.lobby;
+package com.kimoji.kniffelig.view.mainActivity;
 
 
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
+import androidx.test.espresso.ViewAssertion;
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
@@ -12,6 +13,7 @@ import androidx.test.rule.GrantPermissionRule;
 import androidx.test.runner.AndroidJUnit4;
 
 import com.kimoji.kniffelig.R;
+import com.kimoji.kniffelig.view.lobby.LobbyActivity;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -21,7 +23,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isClickable;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withParent;
@@ -29,7 +33,7 @@ import static org.hamcrest.Matchers.allOf;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class StartAppLobbyExistsTest {
+public class MainActivityTest {
 
     @Rule
     public ActivityTestRule<LobbyActivity> mActivityTestRule = new ActivityTestRule<>(LobbyActivity.class);
@@ -40,22 +44,29 @@ public class StartAppLobbyExistsTest {
                     "android.permission.WRITE_EXTERNAL_STORAGE");
 
     @Test
-    public void startAppLobbyExistsTest() {
-        ViewInteraction button = onView(
-                allOf(withId(R.id.btn_local_lobby),
-                        childAtPosition(
-                                withParent(withId(R.id.viewPager)),
-                                0),
-                        isDisplayed()));
-        button.check(matches(isDisplayed()));
+    public void startApp() {
+        ViewInteraction localGameButton = onView(
+                allOf(withId(R.id.btn_local_lobby), childAtPosition(withParent(withId(R.id.viewPager)), 0), isDisplayed()));
+        localGameButton.check(matches(isDisplayed()));
 
-        ViewInteraction button2 = onView(
-                allOf(withId(R.id.btn_bluetooth_lobby),
-                        childAtPosition(
-                                withParent(withId(R.id.viewPager)),
-                                1),
-                        isDisplayed()));
-        button2.check(matches(isDisplayed()));
+        ViewInteraction bluetoothLobbyButton = onView(allOf(withId(R.id.btn_bluetooth_lobby),
+                childAtPosition(withParent(withId(R.id.viewPager)), 1), isDisplayed()));
+        bluetoothLobbyButton.check(matches(isDisplayed()));
+
+        onView(withId(R.id.btn_local_lobby)).check(matches(isClickable()));
+        onView(withId(R.id.btn_bluetooth_lobby)).check(matches(isClickable()));
+    }
+
+    @Test
+    public void startLocalGame() {
+
+        onView(withId(R.id.btn_local_lobby)).check(matches(isDisplayed()));
+        onView(withId(R.id.btn_local_lobby)).check(matches(isClickable()));
+
+
+        onView(withId(R.id.btn_local_lobby)).perform(click());
+
+
     }
 
     private static Matcher<View> childAtPosition(
