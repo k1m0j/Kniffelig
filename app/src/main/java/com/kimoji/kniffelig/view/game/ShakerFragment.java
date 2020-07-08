@@ -12,9 +12,11 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,6 +38,7 @@ public class ShakerFragment extends Fragment {
     private Button save, load;
     private ImageView imageView1, imageView2, imageView3, imageView4, imageView5;
     private TextView currentPlayer, currentRound, shakesLeft;
+    private ToggleButton experiencePlusBtn;
 
     private Playground playground;
     private DataStorageController dataStorageController;
@@ -84,6 +87,9 @@ public class ShakerFragment extends Fragment {
         load = view.findViewById(R.id.load);
         load.setOnClickListener(this::loadGame);
 
+        experiencePlusBtn = view.findViewById(R.id.experience_plus_btn);
+        experiencePlusBtn.setOnCheckedChangeListener(this::onCheckedChanged);
+
         currentRound.setText(String.valueOf(playground.getCurrentRound()));
         currentPlayer.setText((playground.getActivePlayerName()));
         shakesLeft.setText(String.valueOf(playground.getLeftTries()));
@@ -99,18 +105,23 @@ public class ShakerFragment extends Fragment {
         return view;
     }
 
+    /*
     @Override
     public void onResume() {
         super.onResume();
-        // Add the following line to register the Session Manager Listener onResume
         sensorManager.registerListener(shakeDetector, accelerometer, SensorManager.SENSOR_DELAY_UI);
     }
 
     @Override
     public void onPause() {
-        // Add the following line to unregister the Sensor Manager onPause
         sensorManager.unregisterListener(shakeDetector);
         super.onPause();
+    }*/
+
+    public void onCheckedChanged(CompoundButton toggleButton, boolean isChecked) {
+        if (isChecked)
+            sensorManager.registerListener(shakeDetector, accelerometer, SensorManager.SENSOR_DELAY_UI);
+        else sensorManager.unregisterListener(shakeDetector);
     }
 
 
